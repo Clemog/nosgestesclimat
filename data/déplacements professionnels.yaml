@@ -182,18 +182,53 @@ déplacements professionnels . moyen . train . présent:
 déplacements professionnels . moyen . train:
   icônes: 🚄
   applicable si: présent
-  formule: heures * 0.346
+  formule:
+    somme: 
+      - TER
+      - TGV
   unité: kgCO2e
-  note: FE 67, on considère seulement le TGV pour l'instant
 
-déplacements professionnels . moyen . train . heures:
-  question: En moyenne, combien d'heures par an passez-vous dans le train dans le cadre de vos déplacements professionnels ?
-  suggestions: 
-    2 heures/mois: 24
-    4 heures/mois: 48
-    16 heures/mois: 192 
-  unité: heures/an
-  par défaut: 24
+déplacements professionnels . moyen . train . TER:
+  titre : Trajet en TER
+  description: |
+    Je voyage en TER à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
+  icônes: 🚃
+  applicable si: présent
+  formule:
+    variations: 
+    - si: heures = 0
+      alors: 0
+    - sinon: heures * 1.49
+  note: FE 67
+
+déplacements professionnels . moyen . train . TER . heures:
+  question: Combien d'heures passez-vous en TER ?
+  par défaut: 10
+  unité: heures
+  période: année
+  
+déplacements professionnels . moyen . train . TGV:
+  titre : Trajet en TGV
+  description: |
+    Je voyage en TGV à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
+  icônes: 🚄
+  applicable si: présent
+  formule:
+    variations: 
+    - si: heures = 0
+      alors: 0
+    - sinon: heures * 0.35
+  note: FE 68
+ 
+déplacements professionnels . moyen . train . TGV . heures:
+  question: Combien d'heures passez-vous en TGV ?
+  par défaut: 10
+  unité: heures
+  période: année
 
 déplacements professionnels . moyen . véhicule de fonction . présent:
   question: Prenez-vous votre véhicule de fonction ?

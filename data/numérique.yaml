@@ -1,8 +1,9 @@
 numérique:
   description: |
-    Le numérique est au coeur de l'actualité environnementale depuis 2019. 
-    
-    Pourtant, son empreinte n'est pas forcément celle qu'on croit : par exemple, les multiples appareils de nos maisons sont étonnemment importants.
+    Compte tenu du mix électrique mondial, la part d’émissions de gaz à effet de serre (GES) attribuable au numérique passerait ainsi de 2,5% en 2013 à 4% en 2020 (2,1 Gt) selon notre estimation. Le numérique devrait émettre en 2020 autant de CO2 que l’Inde en 2015, pour la totalité de son milliard trois cent millions d’habitants consommant essentiellement des énergies fossiles.
+    Plus préoccupant encore est le taux de croissance d’environ 8% des émissions de GES dues au Numérique. En effet, cette croissance doit s’analyser dorénavant au regard des objectifs de réduction des émissions de GES tels que définis lors de la COP 21. Or, alors que l’on peut espérer une baisse graduelle des émissions de GES totales à court terme (2020, par exemple), la part du Numérique dans ces émissions va continuer à augmenter et pourrait doubler d’ici 2025 pour atteindre 8%.
+    La phase de production des équipements occupe une part très significative, environ 45% en 2020, dans l’empreinte énergétique totale du Numérique, ainsi que dans les émissions de GES qui en découlent. Un utilisateur de smartphone (s’il garde son appareil deux ans) verra ainsi la consommation énergétique totale induite au cours du cycle de vie de cet équipement se réaliser à plus de 90% avant même son achat11. Ce poids de la phase de production dans l’impact énergétique est de l’ordre de 60% pour une télévision connectée mais est bien supérieur à 80% pour un ordinateur portable.
+    Une bonne partie des enjeux environnementaux du Numérique n’est donc pas liée à l’usage que l’on en fait, mais en grande partie au volume de matériel produit, à son processus de production, et à sa durée de vie.
   couleur: '#B53471'
   icônes: 📺
   formule: 
@@ -43,7 +44,9 @@ numérique . internet . empreinte horaire . intensité électricité:
 
 numérique . internet . durée journalière: 
   question: Dans le cadre professionnel, combien d'heures passez-vous par jour sur internet hors visio-conférence (envoi de mail, surf Web, streaming vidéo, etc.) ?
-  description: Comptez une estimation de vos heures seulement au bureau.
+  description: |
+    Indiquez, ici, le nombre d’heures journalier que vous passez par jour sur internet hors visio-conférence. 
+    Le temps de visio-conférence sera traité dans la question suivante. 
   unité: heures
   par défaut: 4 heures
   suggestions: 
@@ -76,7 +79,11 @@ numérique . visioconférence . empreinte par minute:
     - Discord
 
 numérique . visioconférence . durée journalière:
-  question: Combien d'heures passez-vous en moyenne en visioconférence par jour ?
+  question: Dans le cadre professionnel, combien d'heures passez-vous en moyenne en visioconférence par jour ?
+  description: |
+    Indiquez, ici, le nombre d’heures journalier que vous passez en visio-conférence dans le cadre professionnel. 
+    La visio-conférence est le principal effet rebond du télétravail, c’est pourquoi nous l’incluons dans le calcul de votre impact professionnel. Nous avons calculé un facteur d’émission moyen grâce aux données publiées dans l’étude de l’impact de la visio-conférence de Greenspector. 
+    Pour en savoir plus : https://greenspector.com/fr/quelle-application-mobile-de-visioconference-pour-reduire-votre-impact-edition-2021/
   unité: heure
   par défaut: 2
   suggestions:
@@ -95,6 +102,9 @@ numérique . mails . empreinte par mail:
 
 numérique . mails . nbre journalier:
   question: Dans le cadre professionnel, combien de mails envoyez-vous et recevez-vous en moyenne par jour ?
+  description: |
+   Indiquez ici, le nombre de mails envoyés et reçus en moyenne par jour dans le cadre professionnel. 
+   De même que la visio-conférence a un impact sur l’environnement, le nombre de mails envoyés, reçus et stockés émet des gaz à effet de serre. 
   unité: mails
   par défaut: 20
   suggestions:
@@ -134,7 +144,7 @@ numérique . équipements . ordinateur portable . age:
   question: Quel âge a votre ordinateur portable ?
   applicable si: ordinateur portable . présent
   unité: ans
-  par défaut: 4
+  par défaut: 5
 
 numérique . équipements . ordinateur fixe:
   icônes: 🖥
@@ -221,7 +231,7 @@ numérique . équipements . tablette . age:
   question: Quel âge a votre tablette ?
   applicable si: tablette . présent
   unité: ans
-  par défaut: 4
+  par défaut: 5
 
 numérique . équipements . appareil photo:
   applicable si: présent
@@ -257,4 +267,4 @@ numérique . équipements . vidéoprojecteur . age:
   question: Quel âge a votre vidéoprojecteur ?
   applicable si: vidéoprojecteur . présent
   unité: ans
-  par défaut: 4
+  par défaut: 5

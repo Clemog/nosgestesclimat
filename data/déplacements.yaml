@@ -1,6 +1,9 @@
 déplacements:
   description: |
-    A compléter
+    Le secteur des transports est la première source d’émissions de gaz à effet de serre (GES) en France, avec près de 30 % des émissions totales. La route génère 95 % du CO2 des transports.
+    Si la voiture est aussi incontournable dans nos sociétés, c’est parce qu’il ne s’agit pas seulement d’un véhicule, mais bien d’un système complet composé des infrastructures, des services, d’une fiscalité et d’un imaginaire puissant, construit depuis des décennies par des campagnes publicitaires. L’alternative doit nécessairement s’appuyer sur un système aussi abouti, où les véhicules, les infrastructures, les services, la fiscalité, et l’imaginaire ont une cohérence d’ensemble.
+    Source : [https://theshiftproject.org/article/guide-mobilite-quotidienne-bas-carbone/](https://theshiftproject.org/article/guide-mobilite-quotidienne-bas-carbone/)
+Réduire les émissions de gaz à effet de serre liées à la mobilité implique d’agir sur les 3 composantes du système :
   couleur: '#0c2461'
   icônes: 🚦
   formule:
@@ -205,7 +208,7 @@ déplacements . véhicule de fonction . deux-roues . type . plus de 250cm3:
 déplacements . véhicule de fonction . deux-roues . km:
   question: Quelle distance parcourez-vous à l’année avec ce deux-roues dans le cadre de vos déplacements professionnels ?
   description: |
-   Ne renseigner ici que les km parcourus avec le véhicule de fonction fourni par l’entreprise. Si vous faites des déplacements professionnels avec des véhicules personnels ou de location, vous aurez l’occasion de le communiquer plus tard dans le questionnaire. 
+   N'indiquez, ici, que les km parcourus avec le véhicule de fonction fourni par l’entreprise. Si vous faites des déplacements professionnels avec des véhicules personnels ou de location, vous aurez l’occasion de le communiquer plus tard dans le questionnaire. 
    On calcule ici l’impact carbone de son usage. Cet impact est directement influencé par le nombre de km parcourus. Cet usage est comptabilisé dans les émissions dans les consommations d’énergie de l’entreprise. 
   par défaut: 100
   unité: km
@@ -344,7 +347,7 @@ déplacements . déplacements domicile-travail:
     - sinon: moyens de transport * facteur aller-retour
 
 déplacements . déplacements domicile-travail . jours par semaine:
-  question: En moyenne, combien de fois par semaine vous-rendez-vous sur votre lieu de travail ? 
+  question: En moyenne, combien de fois par semaine vous rendez-vous sur votre lieu de travail ? 
   description: |
     Cette donnée est nécessaire au calcul de l’impact de vos déplacements domicile-travail. En effet, vous allez répondre aux questions suivantes par trajet. Nous avons donc besoin de connaître le nombre de trajets que vous effectuez pour vous rendre sur votre lieu de travail sur une année. 
   par défaut: 5
@@ -407,7 +410,7 @@ déplacements . déplacements domicile-travail . moyens de transport:
 #------------------------------------------- moyens de transport Neutre -------------------------------------------
 
 déplacements . déplacements domicile-travail . moyens de transport . neutre:
-  titre: Marche ou vélo (non électrique)
+  titre: Marche ou vélo 
   description: |
     Je marche ou je pédale à hauteur de :
 
@@ -545,6 +548,7 @@ déplacements . déplacements domicile-travail . moyens de transport . véhicule
 déplacements . déplacements domicile-travail . moyens de transport . véhicule personnel ou location . voiture . motorisation: 
   question: Quel type de motorisation utilisez-vous ?
   description: |
+    Indiquez, ici, la motorisation de votre voiture.
     Si vous utilisez plusieurs voitures (par exemple dans le cas où vous n'en possédez pas une), choisissez la réponse la plus représentative de votre usage.
   
   par défaut: "'thermique'"
@@ -633,16 +637,16 @@ déplacements . déplacements domicile-travail . moyens de transport . tram . im
 
 déplacements . déplacements domicile-travail . moyens de transport . tram . minutes par trajet:
   applicable si: pourcent > 0 
-  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en métro ou tramway (aller simple)?
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en métro ou tramway (aller simple) ?
   suggestions: 
-    10 minutes / trajet: 10
-    20 minutes / trajet: 20
-    30 minutes / jour: 30
-  unité: minutes/trajet
-  par défaut: 15
+    10 minutes / trajet: 0,17
+    20 minutes / trajet: 0,33
+    30 minutes / jour: 0,5
+  unité: heure/trajet
+  par défaut: 0,25
 
 déplacements . déplacements domicile-travail . moyens de transport . tram . heures par jour:
-  formule: 2 * minutes par trajet / 60
+  formule: 2 * heure par trajet 
   unité: heures/jour
 
 #------------------------------------------- moyen de transport Bus -------------------------------------------
@@ -677,14 +681,14 @@ déplacements . déplacements domicile-travail . moyens de transport . bus . imp
 déplacements . déplacements domicile-travail . moyens de transport . bus . minutes par trajet:
   question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple)?
   suggestions: 
-    10 minutes / trajet: 10
-    20 minutes / trajet: 20
-    30 minutes / jour: 30
-  unité: minutes/trajet
-  par défaut: 15
+    10 minutes / trajet: 0,17
+    20 minutes / trajet: 0,33
+    30 minutes / jour: 0,5
+  unité: heures/trajet
+  par défaut: 0,25
 
 déplacements . déplacements domicile-travail . moyens de transport . bus . heures par jour:
-  formule: 2 * minutes par trajet / 60
+  formule: 2 * heures par trajet 
   unité: heures/jour
 
 #------------------------------------------- moyen de transport Train -------------------------------------------
@@ -717,16 +721,16 @@ déplacements . déplacements domicile-travail . moyens de transport . train . i
     A compléter
 
 déplacements . déplacements domicile-travail . moyens de transport . train . minutes par trajet:
-  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en train (aller simple)?
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en train (aller simple) ?
   suggestions: 
-    20 minutes / trajet: 20
-    30 minutes / jour: 30
-    1 heure / trajet: 60
-  unité: minutes/trajet
+    20 minutes / trajet: 0,33
+    30 minutes / jour: 0,5
+    1 heure / trajet: 1
+  unité: heure/trajet
   par défaut: 15
 
 déplacements . déplacements domicile-travail . moyens de transport . train . heures par jour:
-  formule: 2 * minutes par trajet / 60
+  formule: 2 * heure par trajet 
   unité: heures/jour
 
 #------------------------------------------- DEPLACEMENTS PRO -------------------------------------------
@@ -746,9 +750,9 @@ déplacements . déplacements professionnels :
       - hotel
 
 déplacements . déplacements professionnels . affirmatif:
-  question: Êtes-vous amener à effectuer des déplacements professionels (en dehors de ceux effectuées avec votre véhicule individuel de fonction si vous en possédez un) ?
+  question: Êtes-vous amené à effectuer des déplacements professionels (en dehors de ceux effectués avec votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
-    Les déplacements professionnels effectués avec votre véhicule individuel de fonction ont déjà été pris en compte auparavant dans le questionnaire. 
+    Les déplacements professionnels effectués avec votre véhicule individuel de fonction ont déjà été pris en compte auparavant dans le questionnaire. Les déplacements domicile-travail ont également déjà été pris en compte.
   par défaut: oui
 
 déplacements . déplacements professionnels . moyen:
@@ -804,7 +808,7 @@ déplacements . déplacements professionnels . moyen . transports en commun . tr
   note: FE 65
 
 déplacements . déplacements professionnels . moyen . transports en commun . tram ou métro . heures:
-  question: Combien de temps (en heures) passez-vous par semaine dans le métro ou le tramway dans le cadre de vos déplacements professionnels (hors déplacements domicile-travail) ?
+  question: Combien de temps (en heures), passez-vous par semaine dans le métro ou le tramway dans le cadre de vos déplacements professionnels (hors déplacements domicile-travail) ?
   par défaut: 10
   unité: heures
   période: semaine
@@ -825,7 +829,7 @@ déplacements . déplacements professionnels . moyen . transports en commun . bu
   note: FE 66
 
 déplacements . déplacements professionnels . moyen . transports en commun . bus . heures:
-  question: Combien de temps (en heures) passez-vous par semaine dans le bus dans le cadre de vos déplacements professionnels (hors déplacements domicile-travail) ?
+  question: Combien de temps (en heures), passez-vous par semaine dans le bus dans le cadre de vos déplacements professionnels (hors déplacements domicile-travail) ?
   par défaut: 10
   unité: heures
   période: semaine
@@ -922,9 +926,11 @@ déplacements . déplacements professionnels . moyen . train:
 déplacements . déplacements professionnels . moyen . train . heures:
   question: En moyenne, combien d'heures par an passez-vous dans le train dans le cadre de vos déplacements professionnels ?
   suggestions: 
-    à faire: 0
+    2 heures/mois: 24
+    4 heures/mois: 48
+    16 heures/mois: 192 
   unité: heures/an
-  par défaut: 10
+  par défaut: 24
 
 déplacements . déplacements professionnels . moyen . véhicule de fonction . présent:
   question: Prenez-vous votre véhicule de fonction ?
@@ -987,9 +993,9 @@ déplacements . déplacements professionnels . hotel:
   unité: kgCO2e
 
 déplacements . déplacements professionnels . hotel . nbre nuits:
-  question: En moyenne, combien de nuits passez-vous à l'hotel chaque mois ?
+  question: En moyenne, combien de nuits passez-vous à l'hôtel chaque mois ?
   suggestions: 
-    zéros: 0
+    zéro: 0
     1 par mois: 1
     10 par mois: 10
   unité: nuits/mois

@@ -1,0 +1,324 @@
+véhicule de fonction:
+  description: |
+    A compléter
+  couleur: '#0c2461'
+  icônes: 🚘
+  applicable si: affirmatif   
+  formule: 
+    variations: 
+      - si: type = 'voiture'
+        alors: voiture
+      - sinon: deux-roues
+
+véhicule de fonction . affirmatif:
+  question: Disposez-vous d’un véhicule individuel de fonction ?
+  description: |
+    Si votre organisation vous fournit un véhicule individuel de fonction, il doit être indiqué ici. 
+    Si vous n’avez pas de véhicule de fonction mais que vous disposez d’un véhicule personnel, ne l’indiquez pas ici. Vous aurez l’occasion de l’indiquer plus tard dans le questionnaire.
+  par défaut: non
+
+véhicule de fonction . type:
+  question: Quel est le type de véhicule de fonction dont vous disposez ?
+  description: |
+    Indiquez, ici, le type de véhicule de votre véhicule personnel de fonction. 
+    Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
+
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - voiture
+        - deux-roues
+  par défaut: "'voiture'"
+
+véhicule de fonction . type . voiture:
+véhicule de fonction . type . deux-roues:
+
+véhicule de fonction . voiture:
+  icônes: 🚘
+  formule: construction amortie + impact usage
+  unité: kgCO2e
+
+véhicule de fonction . voiture . motorisation: 
+  question: Quel type de voiture de fonction utilisez-vous ?
+  description: |
+   Indiquez, ici, le type de véhicule de votre véhicule personnel de fonction. 
+   Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
+  par défaut: "'thermique'"
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - thermique
+        - hybride
+        - électrique
+
+véhicule de fonction . voiture . motorisation . thermique:
+  titre: Thermique (diesel/essence)
+véhicule de fonction . voiture . motorisation . électrique:
+véhicule de fonction . voiture . motorisation . hybride:
+
+véhicule de fonction . voiture . thermique: oui # sans le 'oui', une question vide est posée
+
+véhicule de fonction . voiture . thermique . gabarit:
+  applicable si: km > 0
+  question: Quel est le gabarit de la voiture de fonction ?
+  description: |
+    Le gabarit du véhicule influe sur sa consommation de carburant. En effet, plus un véhicule est grand et lourd, plus il consomme de litres de carburant au 100 km. 
+    L’impact carbone varie donc en fonction du gabarit de la voiture. 
+  par défaut: "'moyenne'"
+  formule: 
+    une possibilité:
+      choix obligatoire: oui
+      possibilités: 
+        - petite
+        - moyenne
+        - berline
+        - SUV
+
+véhicule de fonction . voiture . thermique . gabarit . petite:
+véhicule de fonction . voiture . thermique . gabarit . moyenne:
+véhicule de fonction . voiture . thermique . gabarit . berline:
+véhicule de fonction . voiture . thermique . gabarit . SUV:
+
+véhicule de fonction . voiture . thermique . empreinte au kilomètre:
+  formule:
+    variations: 
+      - si: gabarit = 'petite' 
+        alors: 0.13 kgCO2e/km
+      - si: gabarit = 'moyenne'
+        alors: 0.15 kgCO2e/km
+      - si: gabarit = 'berline'
+        alors: 0.19 kgCO2e/km
+      - si: gabarit = 'SUV'
+        alors: 0.23 kgCO2e/km
+  note: FE 25, 26, 27, 28
+
+véhicule de fonction . voiture . impact usage:
+  formule: km * empreinte au kilomètre
+  unité: kgCO2e
+
+véhicule de fonction . voiture . km:
+  question: Quelle distance parcourez-vous à l’année avec cette voiture de fonction dans le cadre de vos déplacements professionnels ?
+  description: |
+   Ne renseignez, ici, que les km parcourus avec le véhicule de fonction fourni par l’entreprise. Si vous faites des déplacements professionnels avec des véhicules personnels ou de location, vous aurez l’occasion de le communiquer plus tard dans le questionnaire. 
+   Après avoir calculé l’impact carbone lié à la fabrication du véhicule, on calcule, ici, l’impact carbone de son usage. Cet impact est directement influencé par le nombre de km parcourus. 
+   Cet usage est comptabilisé dans les émissions générées par les consommations d’énergie de l’entreprise. 
+
+  par défaut: 100
+  unité: km
+
+véhicule de fonction . voiture . empreinte au kilomètre: 
+  formule: 
+    variations: 
+      - si: motorisation = 'thermique'
+        alors: thermique . empreinte au kilomètre
+      - si: motorisation = 'électrique'
+        alors: 0.103
+      - sinon: 0.183
+  note: FE 76 pour l'électrique, 77 pour l'hybride
+  
+véhicule de fonction . voiture . construction amortie:
+  formule: construction * amortissement particulier
+  unité: kgCO2e
+
+véhicule de fonction . voiture . construction:
+  formule: 
+    variations: 
+      - si: motorisation = 'thermique'
+        alors: 3740
+      - si: motorisation = 'électrique'
+        alors: 6570
+      - sinon: 5610
+  note: FE 30, 31, 32
+  unité: kgCO2e
+  description: |
+    ![](https://i.imgur.com/uIlZcEjl.jpg)
+    Une voiture est un gros, très gros objet, qui pèse souvent plus d'une tonne et demi. En conséquence, sa construction a une empreinte importante. 
+    En particulier, la construction d'une voiture électrique de gamme équivalente à une thermique émet plus de gaz à effet de serre. C'est notamment du à la batterie et son poids important.
+    Malgré cela, en France, sur la durée de vie de la voiture et donc les km parcourus, le choix de la voiture électrique est nettement mieux pour le climat. 
+    Mieux, mais loin d'être faible ! En 2020, il ne s'agit plus seulement de comparer des solutions techniques entre elles, il s'agit d'évaluer ses achats par rapport aux objectifs climat.
+
+véhicule de fonction . voiture . amortissement particulier:
+  description: |
+    Quand on achète une voiture, on émet déjà une quantité donnée de GES. Disons par exemple, 10 tonnes, pour une durée de vie de la voiture de 10 ans. Ces gaz sont émis l'année de l'achat, ou plus ou moins (certains composants auront déjà été produits). 
+    Il serait donc logique du point de vue de l'empreinte sur le climat, d'attribuer les émissions de la construction à la 1ère année : l'effet de serre réchauffant commence dès l'achat !
+    Sauf que beaucoup de voitures sont achetées par des entreprises avant d'être vendues d'occasion aux particuliers, ou entre particuliers. Il semble donc légitime de distribuer l'attribution dans le temps, donc au fur et à mesure des propriétaires. De la même façon, il faut aussi penser aux utilisateurs qui découvrivraient cet outil seulement l'année suivant l'achat d'une voiture : il est légitime de leur réserver une partie des émissions émises.
+    Deuxièmement, en attribuant toute l'empreinte à l'achat, on enverrait un signal fort qui désavantagerait le choix d'une voiture électrique par rapport à une thermique, alors qu'en France les émissions de cette dernière rattrapent la première dès les premières années d'usage.
+    D'où le choix d'amortir l'achat sur les 10 premières années (la durée de vie moyenne d'une voiture), avec un taux dégressif, en s'assurant bien que la somme de la part de chaque année donne 100%.
+    
+    En bref, nous faisons un compromis entre un modèle cohérent du point de vue du climat et un modèle plus pratique dans le contexte d'un simulateur pédagogique pas forcément utilisé chaque année.
+    
+    Pour voir la réflexion ayant mené à cette méthode, voir [cette discussion](https://github.com/betagouv/ecolab-data/issues/225#issuecomment-689472950).
+  note: |
+    Quand on aura mis à jour le code avec la dernière version de publi.codes, on pourra utiliser le [mécanisme `grille`](https://publi.codes/mécanismes#grille) qui fait exactement ça.
+  formule: 
+    variations: 
+      - si: âge < 1
+        alors: 40%
+      - si: âge < 2
+        alors: 20%
+      - si: âge < 3
+        alors: 10%
+      - si: âge < 10
+        alors: 5%
+      - sinon: 0%
+
+véhicule de fonction . voiture . âge:
+  question: Quel est l'âge de votre voiture de fonction ?
+  description: | 
+   L’âge du véhicule permet de calculer l’amortissement de l’impact carbone lié à sa fabrication. 
+  unité: années
+  par défaut: 3
+  suggestions: 
+    6 mois: 0.5 
+    1 an et demi: 1.5
+    5 ans: 5
+    10 ans: 10
+
+véhicule de fonction . deux-roues:
+  icônes: 🛵
+  formule: km * empreinte au kilomètre
+  unité: kgCO2e
+
+véhicule de fonction . deux-roues . type:
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - scooter
+        - moins de 250cm3
+        - plus de 250cm3
+  par défaut: "'plus de 250cm3'"
+
+véhicule de fonction . deux-roues . type . scooter:
+véhicule de fonction . deux-roues . type . moins de 250cm3:
+véhicule de fonction . deux-roues . type . plus de 250cm3:
+
+véhicule de fonction . deux-roues . km:
+  question: Quelle distance parcourez-vous à l’année avec ce deux-roues dans le cadre de vos déplacements professionnels ?
+  description: |
+   N'indiquez, ici, que les km parcourus avec le véhicule de fonction fourni par l’entreprise. Si vous faites des déplacements professionnels avec des véhicules personnels ou de location, vous aurez l’occasion de le communiquer plus tard dans le questionnaire. 
+   On calcule ici l’impact carbone de son usage. Cet impact est directement influencé par le nombre de km parcourus. Cet usage est comptabilisé dans les émissions dans les consommations d’énergie de l’entreprise. 
+  par défaut: 100
+  unité: km
+  
+véhicule de fonction . deux-roues . empreinte au kilomètre:
+  formule:
+    variations: 
+      - si: deux-roues . type = 'scooter'
+        alors: 0.065
+      - si: deux-roues . type = 'moins de 250cm3'
+        alors: 0.062
+      - sinon: 0.17
+  note: FE 8, 9, 10
+  unité: kgCO2e/km
+
+# véhicule de fonction . voiture thermique . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400
+
+# véhicule de fonction . voiture électrique . détient:
+#   question: Avez-vous une voiture électrique ?
+#   par défaut: non
+
+# véhicule de fonction . voiture électrique :
+#   icônes: 🚘
+#   applicable si: détient
+#   formule: km * profil . nbre semaines * 0.103
+#   note: FE 75
+#   unité: kgCO2e
+
+# véhicule de fonction . voiture électrique . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400
+  
+# véhicule de fonction . voiture hybride . détient:
+#   question: Avez-vous une voiture hybride ?
+#   par défaut: non
+
+# véhicule de fonction . voiture hybride :
+#   icônes: 🚘
+#   applicable si: détient
+#   formule: km * profil . nbre semaines * 0.183
+#   note: FE 76
+#   unité: kgCO2e
+
+# véhicule de fonction . voiture hybride . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400
+
+# véhicule de fonction . scooter . détient:
+#   question: Avez-vous une scooter ?
+#   par défaut: non
+
+# véhicule de fonction . scooter:
+#   icônes: 🛵
+#   applicable si: détient
+#   formule: km * profil . nbre semaines * 0.0644
+#   note: FE 8
+#   unité: kgCO2e
+
+# véhicule de fonction . scooter . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400
+
+# véhicule de fonction . moto moins de 250 cm3 . détient:
+#   question: Avez-vous une moto de moins de 250 cm3 ?
+#   par défaut: non
+
+# véhicule de fonction . moto moins de 250 cm3:
+#   icônes: 🏍
+#   applicable si: détient
+#   formule: km * profil . nbre semaines * 0.0616
+#   note: FE 9
+#   unité: kgCO2e
+
+# véhicule de fonction . moto moins de 250 cm3 . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400
+
+# véhicule de fonction . moto plus de 250 cm3 . détient:
+#   question: Avez-vous une moto de plus de 250 cm3 ?
+#   par défaut: non
+
+# véhicule de fonction . moto plus de 250 cm3:
+#   icônes: 🏍
+#   applicable si: détient
+#   formule: km * profil . nbre semaines * 0.168
+#   note: FE 10
+#   unité: kgCO2e
+
+# véhicule de fonction . moto plus de 250 cm3 . km:
+#   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+#   suggestions: 
+#     50km par semaine: 50
+#     400km par semaine: 400
+#     800km par semaine: 800
+#   unité: km/semaine
+#   par défaut: 400

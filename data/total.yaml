@@ -18,7 +18,9 @@ bilan:
     somme: 
       - profil
       - alimentation
-      - déplacements
+      - véhicule de fonction
+      - trajets domicile-travail
+      - déplacements professionnels
       - numérique
   références: 
     - https://avenirclimatique.org/action/

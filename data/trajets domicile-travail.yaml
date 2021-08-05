@@ -1,0 +1,399 @@
+trajets domicile-travail:
+  couleur: '#72dafc'
+  icônes: 🚦
+  description: |
+    ![](https://www.mobilitytechgreen.com/wp-content/uploads/2017/08/bicyclecommute.jpg)
+    
+    Les déplacements pendulaires représentent une part importante du bilan carbone de votre entreprise.
+  formule:  # Ici nous pourrions utiliser un "non applicable si: jours par semaine = 0" mais un bug fait que la question km deviendra booléenne Oui/Non. Voir https://github.com/betagouv/mon-entreprise/issues/1367
+    variations:
+    - si: jours par semaine = 0
+      alors: 0
+    - sinon: moyens de transport * facteur aller-retour
+
+trajets domicile-travail . jours par semaine:
+  question: En moyenne, combien de fois par semaine vous rendez-vous sur votre lieu de travail ? 
+  description: |
+    Cette donnée est nécessaire au calcul de l’impact de vos déplacements domicile-travail. En effet, vous allez répondre aux questions suivantes par trajet. Nous avons donc besoin de connaître le nombre de trajets que vous effectuez pour vous rendre sur votre lieu de travail sur une année. 
+  par défaut: 5
+  unité: jours
+  suggestions:
+    zéro: 0
+    1 fois/semaine: 1
+    2 fois/semaine: 2
+    3 fois/semaine: 3
+    4 fois/semaine: 4
+    tous les jours: 5
+
+trajets domicile-travail . aller-retour:
+  question: Vous arrive-t-il de faire un aller-retour entre votre domicile et lieu de travail dans la journée ? (pour la pause déjeuner par exemple)
+  note: Augmentation de la part de transport Domicile-Travail de 20%, 60% ou 100% respectivement pour de temps en temps (1 fois sur 5), souvent (3 fois sur 5) et tous les jours. 
+  description: |
+    Faire des trajets supplémentaires engendre des émissions supplémentaires. 
+    Ces émissions doivent être prise en compte dans le calcul de l’impact de vos déplacements. 
+  par défaut: "'jamais'"
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - jamais
+        - de temps en temps
+        - souvent
+        - tous les jours
+
+trajets domicile-travail . aller-retour . jamais:
+trajets domicile-travail . aller-retour . de temps en temps:
+trajets domicile-travail . aller-retour . souvent:
+trajets domicile-travail . aller-retour . tous les jours:
+
+trajets domicile-travail . facteur aller-retour: 
+  formule: 
+    variations: 
+      - si: aller-retour = 'jamais'
+        alors: 1
+      - si: aller-retour = 'de temps en temps'
+        alors: 1.2
+      - si: aller-retour = 'souvent'
+        alors: 1.6
+      - si: aller-retour = 'tous les jours'
+        alors: 2
+
+trajets domicile-travail . moyens de transport:
+  titre: Proportions moyens de transport
+  description: |
+    Vous pouvez renseigner la répartition de vos moyens de transport pour vous rendre sur votre lieu de travail. 
+    Par exemple, si vous utilisez différents moyens de transport sur un même trajet (voiture plus tramway par exemple) ou encore si vous utilisez différents moyens de transport selon les jours ou les saisons, etc. (vélo en été, voiture en hiver par exemple).
+  formule: 
+    somme:
+      - neutre
+      - véhicule de fonction
+      - véhicule personnel ou location
+      - tram 
+      - bus
+      - train
+
+#------------------------------------------- moyens de transport Neutre -------------------------------------------
+
+trajets domicile-travail . moyens de transport . neutre:
+  titre: Marche ou vélo 
+  description: |
+    Je marche ou je pédale à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/9/95/Man_biking_on_Recife_city.jpg)
+
+    La marche et le vélo (non électrique) font partie des mobilités douces, qui n’émettent pas de GES de manière directe.
+    Les émissions liées à la fabrication (environ 100 kgCO2eq) n’ont pas été prises en compte, car trop faibles face aux autres émissions liées au transport.
+  icônes: 🚲
+  formule: 0 * pourcent / 100
+
+trajets domicile-travail . moyens de transport . neutre . pourcent:
+  question: Part de la marche ou vélo dans la répartition des moyens de transport sur la semaine
+  par défaut: 0
+  période: semaine
+
+#------------------------------------------- moyen de transport Véhicule de fonction -------------------------------------------
+
+trajets domicile-travail . moyens de transport . véhicule de fonction:
+  titre: Véhicule de fonction
+  applicable si: véhicule de fonction . affirmatif
+  description: |
+    J'utilise mon véhicule de fonction à hauteur de :
+  icônes: 🚗
+  formule: 0 * pourcent / 100
+
+trajets domicile-travail . moyens de transport . véhicule de fonction . pourcent:
+  question: Part du véhicule de fonction dans la répartition des moyens de transport sur la semaine
+  par défaut: 0
+  période: semaine
+
+trajets domicile-travail . moyens de transport . véhicule de fonction . km trajet:
+  question: Lorsque vous utilisez ce véhicule, combien de km parcourez-vous par trajet avec ce véhicule pour vous rendre de votre domicile à votre lieu de travail ? (aller seulement) 
+  applicable si: pourcent > 0
+  description: |
+    A compléter
+    
+  par défaut: 15
+  unité: km/trajet
+  suggestions:
+    10km: 10
+    20km: 20
+    30km: 30
+
+trajets domicile-travail . moyens de transport . véhicule de fonction . km:
+  description: |
+    Distance moyenne parcourue par l'usager à l'année.
+  unité: km
+  formule: km trajet * 2 * (profil . nbre semaines * trajets domicile-travail . jours par semaine)
+
+trajets domicile-travail . moyens de transport . véhicule de fonction . empreinte au kilomètre:
+  formule:
+    variations:
+      - si: véhicule de fonction . type = 'voiture'
+        alors: véhicule de fonction . voiture . empreinte au kilomètre
+      - sinon: véhicule de fonction . deux-roues . empreinte au kilomètre
+
+
+#------------------------------------------- moyen de transport véhicule personnel ou location -------------------------------------------
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location:
+  titre: Véhicule personnel ou location
+  description: |
+    J'utilise mon véhicule personnel ou de location à hauteur de :
+
+    ![](https://images.unsplash.com/photo-1572312284222-ecf6d70f1907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)
+
+    La voiture est aujourd’hui en France essentiellement thermique (essence ou diesel) bien que l’électrique progresse lentement. 
+    En France, on émet en moyenne 193 gCO2eq/km parcouru en voiture. Ce chiffre comprend les émissions dues à la combustion du carburant mais également celles dues à la fabrication. Il faut également noter qu’une voiture française transporte en moyenne 1,6 passager.
+    
+  icônes: 🚗
+  formule: 
+    variations: 
+    - si: pourcent = 0
+      alors: 0
+    - sinon: (pourcent / 100) * impact usage
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent:
+  question: Part de la voiture dans la répartition des moyens de transport sur la semaine
+  par défaut: 50
+  unité: %
+  période: semaine
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . impact usage:
+  formule: km * empreinte au kilomètre
+  unité: kgCO2e
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . km trajet:
+  question: Lorsque vous utilisez ce véhicule, combien de km parcourez-vous par trajet avec ce véhicule pour vous rendre de votre domicile à votre lieu de travail ? (aller seulement) (hors votre véhicule individuel de fonction si vous en possédez un)
+  applicable si: pourcent > 0
+  description: |
+    Indiquez, ici, le nombre de km par an que vous avez parcourus avec ce véhicule. 
+    Le nombre de km que vous parcourez permet de calculer les émissions de carbone liées à l’utilisation du véhicule. 
+
+  note: Mettre un lien vers l'étude et mettre à jour avec les statistiques de l'enquête déplacement 2020 si disponible.
+  par défaut: 15
+  unité: km/trajet
+  suggestions:
+    10km: 10
+    20km: 20
+    30km: 30
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . km:
+  description: |
+    Distance moyenne parcourue par l'usager à l'année.
+  unité: km
+  formule: km trajet * 2 * (profil . nbre semaines * trajets domicile-travail . jours par semaine)
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . empreinte au kilomètre:
+  formule:
+    variations:
+      - si: type = 'voiture'
+        alors: voiture . empreinte au kilomètre
+      - sinon: deux-roues . empreinte au kilomètre
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . type:
+  question: Quel est le type de véhicule que vous utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un)?
+  description: |
+    Indiquez, ici, le type de motorisation que vous avez l’habitude d’utiliser. Si vous n’avez pas de véhicule, veuillez sélectionner le type de véhicule que vous utilisez principalement. 
+    Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
+
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - voiture
+        - deux-roues
+  par défaut: "'voiture'"
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . type . voiture:
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . type . deux-roues:
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture: oui
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues: oui
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture . motorisation: 
+  question: Quel type de motorisation utilisez-vous ?
+  description: |
+    Indiquez, ici, la motorisation de votre voiture.
+    Si vous utilisez plusieurs voitures (par exemple dans le cas où vous n'en possédez pas une), choisissez la réponse la plus représentative de votre usage.
+  
+  par défaut: "'thermique'"
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - thermique
+        - hybride
+        - électrique
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture . motorisation . thermique:
+  titre: Thermique (diesel/essence)
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture . motorisation . électrique:
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture . motorisation . hybride:
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . voiture . empreinte au kilomètre: 
+  formule: 
+    variations: 
+      - si: motorisation = 'thermique'
+        alors: 0.193
+      - si: motorisation = 'électrique'
+        alors: 0.103
+      - sinon: 0.183
+  note: FE 75 pour le thermique, 76 pour l'électrique, 77 pour l'hybride
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . type:
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - scooter
+        - moins de 250cm3
+        - plus de 250cm3
+  par défaut: "'plus de 250cm3'"
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . type . scooter:
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . type . moins de 250cm3:
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . type . plus de 250cm3:
+
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . km:
+  question: Quelle distance parcourez-vous à l’année avec ce deux-roues dans le cadre de vos domicile-travail ? (hors deux-roue de fonction si vous en possédez un)
+  desciption: |
+    Indiquez, ici, le nombre de km par an que vous avez parcourus avec ce véhicule. Le nombre de km que vous parcourez permet de calculer les émissions de carbone liées à l’utilisation du véhicule. 
+  par défaut: 100
+  unité: km
+  
+trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . empreinte au kilomètre:
+  formule:
+    variations: 
+      - si: deux-roues . type = 'scooter'
+        alors: 0.065
+      - si: deux-roues . type = 'moins de 250cm3'
+        alors: 0.062
+      - sinon: 0.17
+  note: FE 8, 9, 10
+  unité: kgCO2e/km
+  
+#------------------------------------------- moyen de transport Tram -------------------------------------------
+
+trajets domicile-travail . moyens de transport . tram:
+  titre : tram ou métro
+  description: |
+    J'utilise le tram à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg) 🚄
+  icônes: 🚋
+  formule: 
+    variations: 
+    - si: pourcent = 0
+      alors: 0
+    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+
+trajets domicile-travail . moyens de transport . tram . pourcent:
+  question: Part du tram dans la répartition des moyens de transport sur la semaine
+  par défaut: 50
+  unité: %
+  période: semaine
+
+trajets domicile-travail . moyens de transport . tram . impact par heure:
+  formule: 0.0385
+  unité: kgCO2e/heures
+  note: FE 64 
+  description: |
+    A compléter
+
+trajets domicile-travail . moyens de transport . tram . heures par trajet:
+  applicable si: pourcent > 0 
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en métro ou tramway (aller simple) ?
+  suggestions: 
+    10 minutes / trajet: 0.17
+    20 minutes / trajet: 0.33
+    30 minutes / jour: 0.5
+  unité: heures/trajet
+  par défaut: 0.25
+
+trajets domicile-travail . moyens de transport . tram . heures par jour:
+  formule: 2 * heures par trajet 
+  unité: heures/jour
+
+#------------------------------------------- moyen de transport Bus -------------------------------------------
+
+trajets domicile-travail . moyens de transport . bus:
+  titre: bus
+  description: |
+    J'utilise le bus à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/d8/Busway%2C_TAN_%28NANTES%2CFR44%29.jpg)
+  icônes: 🚌
+  formule: 
+    variations: 
+    - si: pourcent = 0
+      alors: 0
+    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+
+
+trajets domicile-travail . moyens de transport . bus . pourcent:
+  question: Part du bus dans la répartition des moyens de transport sur la semaine
+  par défaut: 0
+  unité: %
+  période: semaine
+
+trajets domicile-travail . moyens de transport . bus . impact par heure:
+  formule: 1.37
+  unité: kgCO2e/heure
+  note: 
+  description: |
+    A compléter
+
+trajets domicile-travail . moyens de transport . bus . heures par trajet:
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple)?
+  suggestions: 
+    10 minutes / trajet: 0.17
+    20 minutes / trajet: 0.33
+    30 minutes / jour: 0.5
+  unité: heures/trajet
+  par défaut: 0.25
+
+trajets domicile-travail . moyens de transport . bus . heures par jour:
+  formule: 2 * heures par trajet 
+  unité: heures/jour
+
+#------------------------------------------- moyen de transport Train -------------------------------------------
+
+trajets domicile-travail . moyens de transport . train:
+  titre: train
+  description: |
+    J'utilise le train à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
+  icônes: 🚂
+  formule: 
+    variations: 
+    - si: pourcent = 0
+      alors: 0
+    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+
+
+trajets domicile-travail . moyens de transport . train . pourcent:
+  question: Part du train dans la répartition des moyens de transport sur la semaine
+  par défaut: 0
+  unité: %
+  période: semaine
+
+trajets domicile-travail . moyens de transport . train . impact par heure:
+  formule: 0.346
+  unité: kgCO2e/heure
+  note: On considère seulement le TGV pour l'instant, FE 67
+  description: |
+    A compléter
+
+trajets domicile-travail . moyens de transport . train . heures par trajet:
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en train (aller simple) ?
+  suggestions: 
+    20 minutes / trajet: 0.33
+    30 minutes / jour: 0.5
+    1 heure / trajet: 1
+  unité: heures/trajet
+  par défaut: 15
+
+trajets domicile-travail . moyens de transport . train . heures par jour:
+  formule: 2 * heures par trajet 
+  unité: heures/jour

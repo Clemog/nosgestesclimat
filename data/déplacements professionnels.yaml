@@ -251,8 +251,8 @@ déplacements professionnels . moyen . taxi . heures:
 déplacements professionnels . hotel:
   icônes: 🏨
   applicable si: déplacements professionnels . affirmatif
-  formule: nbre nuits * 12 * 0.320 * 130
-  note: FE 37, on considère que nuit + repas + petitdej = 130€
+  formule: nbre nuits * 32.51
+  note: FE 79
   unité: kgCO2e
 
 déplacements professionnels . hotel . nbre nuits:

@@ -128,10 +128,6 @@ numérique . équipements:
 
 numérique . équipements . ordinateur portable:
   icônes: 💻
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   note: |
    Nous estimons que l'appareil va durer un an de plus que l'âge renseigné au moment de l'estimation.
   applicable si: présent
@@ -143,15 +139,11 @@ numérique . équipements . ordinateur portable . présent:
 numérique . équipements . ordinateur portable . age:
   question: Quel âge a votre ordinateur portable ?
   applicable si: ordinateur portable . présent
-  unité: ans
+  unité: an(s)
   par défaut: 5
 
 numérique . équipements . ordinateur fixe:
   icônes: 🖥
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   note: |
     Nous estimons que l'appareil va durer un an de plus que l'âge renseigné au moment de l'estimation.
 
@@ -167,7 +159,7 @@ numérique . équipements . ordinateur fixe . présent:
 numérique . équipements . ordinateur fixe . age:
   question: Quel âge a votre ordinateur fixe ?
   applicable si: ordinateur fixe . présent
-  unité: ans
+  unité: an(s)
   par défaut: 5
 numérique . équipements . ordinateur fixe . empreinte:
   formule: 296 + écran
@@ -179,10 +171,6 @@ numérique . équipements . ordinateur fixe . écran:
 
 numérique . équipements . écran supplémentaire:
   applicable si: présent
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   icônes: 🖥
   formule: 30 / (age + 1)
   unité: kgCO2e
@@ -193,17 +181,13 @@ numérique . équipements . écran supplémentaire . présent:
 numérique . équipements . écran supplémentaire . age:
   question: Quel âge a votre appareil photo ?
   applicable si: écran supplémentaire . présent
-  unité: ans
+  unité: an(s)
   par défaut: 4
 
 numérique . équipements . téléphone:
   applicable si: présent
   icônes: 📱
   formule: 32.8 / (age + 1)
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   note: Nous estimons que l'appareil va durer un an de plus que l'âge renseigné au moment de l'estimation.
 numérique . équipements . téléphone . présent:
   question: Utilisez-vous un téléphone ?
@@ -211,15 +195,11 @@ numérique . équipements . téléphone . présent:
 numérique . équipements . téléphone . age:
   question: Quel âge a votre téléphone ?
   applicable si: téléphone . présent
-  unité: ans
+  unité: an(s)
   par défaut: 2
 
 numérique . équipements . tablette:
   icônes: ⬛
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   applicable si: présent
   formule: 63.2 / (age + 1)
   unité: kgCO2e
@@ -230,15 +210,11 @@ numérique . équipements . tablette . présent:
 numérique . équipements . tablette . age:
   question: Quel âge a votre tablette ?
   applicable si: tablette . présent
-  unité: ans
+  unité: an(s)
   par défaut: 5
 
 numérique . équipements . appareil photo:
   applicable si: présent
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   icônes: 📷
   formule: 30.6 / (age + 1)
 numérique . équipements . appareil photo . présent:
@@ -248,14 +224,10 @@ numérique . équipements . appareil photo . présent:
 numérique . équipements . appareil photo . age:
   question: Quel âge a votre appareil photo ?
   applicable si: appareil photo . présent
-  unité: ans
+  unité: an(s)
   par défaut: 4
 
 numérique . équipements . vidéoprojecteur:
-  description: |
-    Je voyage en avion en France à hauteur de :
-
-    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
   icônes: 📽️
   applicable si: présent
   formule: 145 / (age + 1)
@@ -266,5 +238,5 @@ numérique . équipements . vidéoprojecteur . présent:
 numérique . équipements . vidéoprojecteur . age:
   question: Quel âge a votre vidéoprojecteur ?
   applicable si: vidéoprojecteur . présent
-  unité: ans
+  unité: an(s)
   par défaut: 5

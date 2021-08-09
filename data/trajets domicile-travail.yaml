@@ -365,11 +365,11 @@ trajets domicile-travail . moyens de transport . train:
 
     ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
   icônes: 🚂
-  formule: 
+  formule:
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+    - sinon: pourcent / 100 * impact par semaine * profil . nbre semaines * trajets domicile-travail . jours par semaine
 
 
 trajets domicile-travail . moyens de transport . train . pourcent:
@@ -378,22 +378,53 @@ trajets domicile-travail . moyens de transport . train . pourcent:
   unité: %
   période: semaine
 
-trajets domicile-travail . moyens de transport . train . impact par heure:
-  formule: 0.346
-  unité: kgCO2e/heure
-  note: On considère seulement le TGV pour l'instant, FE 67
+trajets domicile-travail . moyens de transport . train . impact par semaine:
+  formule:   
+    somme: 
+      - TER
+      - TGV
+  unité: kgCO2e
   description: |
     A compléter
 
-trajets domicile-travail . moyens de transport . train . heures par trajet:
-  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en train (aller simple) ?
-  suggestions: 
-    20 minutes / trajet: 0.33
-    30 minutes / jour: 0.5
-    1 heure / trajet: 1
-  unité: heures/trajet
-  par défaut: 15
+trajets domicile-travail . moyens de transport . train . TER:
+  titre : Trajet en TER
+  description: |
+    Je voyage en TER à hauteur de :
 
-trajets domicile-travail . moyens de transport . train . heures par jour:
-  formule: 2 * heures par trajet 
-  unité: heures/jour
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
+  icônes: 🚃
+  # applicable si: présent
+  formule:
+    variations: 
+    - si: heures par trajet = 0
+      alors: 0
+    - sinon: 2 * heures par trajet * 1.49
+  note: FE 67
+
+trajets domicile-travail . moyens de transport . train . TER . heures par trajet:
+  question: Combien d'heures passez-vous en TER ?
+  par défaut: 1
+  unité: heures
+  période: année
+  
+trajets domicile-travail . moyens de transport . train . TGV:
+  titre : Trajet en TGV
+  description: |
+    Je voyage en TGV à hauteur de :
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/d/de/Tram-de-Nantes.jpg)
+  icônes: 🚄
+  # applicable si: présent
+  formule:
+    variations: 
+    - si: heures par trajet = 0
+      alors: 0
+    - sinon: 2 * heures par trajet * 0.35
+  note: FE 68
+ 
+trajets domicile-travail . moyens de transport . train . TGV . heures par trajet:
+  question: Combien d'heures passez-vous en TGV ?
+  par défaut: 0
+  unité: heures
+  période: année

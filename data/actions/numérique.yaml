@@ -1,6 +1,7 @@
 numérique . internet . diminuer:
   titre: Réduire son temps de streaming
   effort: faible
+  type: individuel
   icônes: 💻📉
   applicable si: internet . durée journalière >= 2
   formule: numérique . internet - empreinte réduite
@@ -14,3 +15,13 @@ numérique . internet . durée journalière . réduction:
   formule: 1
   description: Nous proposons ici de réduire d'une heure le temps passé à regarder des vidéos en ligne.
   unité: heures
+
+numérique . internet . allonger durée de vie:
+  titre: Allonger la durée de vie
+  effort: modéré
+  type: collectif
+  icônes: 💻📉
+  description: |
+      Le streaming vidéo contribue aux émissions de GES (d'autant plus quand on utilise la connexion mobile) car il nécessite en réalité une multitude d'infrastructures. 
+
+      En limiter sa consommation, ici d'une heure par jour quand on y passe plus de 2h, et privilégier des alternatives comme la lecture permet de réduire son empreinte carbone numérique. 

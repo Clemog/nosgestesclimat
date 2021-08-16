@@ -112,7 +112,7 @@ trajets domicile-travail . moyens de transport . véhicule de fonction . km traj
   description: |
     A compléter
     
-  par défaut: 15
+  par défaut: 14
   unité: km/trajet
   suggestions:
     10km: 10
@@ -170,7 +170,7 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
     Le nombre de km que vous parcourez permet de calculer les émissions de carbone liées à l’utilisation du véhicule. 
 
   note: Mettre un lien vers l'étude et mettre à jour avec les statistiques de l'enquête déplacement 2020 si disponible.
-  par défaut: 15
+  par défaut: 14
   unité: km/trajet
   suggestions:
     10km: 10
@@ -191,7 +191,7 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
       - sinon: deux-roues . empreinte au kilomètre
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . type:
-  question: Quel est le type de véhicule que vous utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un)?
+  question: Quel est le type de véhicule utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
     Indiquez, ici, le type de motorisation que vous avez l’habitude d’utiliser. Si vous n’avez pas de véhicule, veuillez sélectionner le type de véhicule que vous utilisez principalement. 
     Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
@@ -344,7 +344,7 @@ trajets domicile-travail . moyens de transport . bus . impact par heure:
     A compléter
 
 trajets domicile-travail . moyens de transport . bus . heures par trajet:
-  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple)?
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple) ?
   suggestions: 
     10 minutes / trajet: 0.17
     20 minutes / trajet: 0.33

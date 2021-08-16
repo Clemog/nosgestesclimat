@@ -182,6 +182,7 @@ véhicule de fonction . deux-roues:
   unité: kgCO2e
 
 véhicule de fonction . deux-roues . type:
+  question: Quel type de deux-roues possédez-vous ? 
   formule: 
     une possibilité: 
       choix obligatoire: oui

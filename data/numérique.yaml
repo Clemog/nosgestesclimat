@@ -140,7 +140,7 @@ numérique . équipements . ordinateur portable . age:
   question: Quel âge a votre ordinateur portable ?
   applicable si: ordinateur portable . présent
   unité: an(s)
-  par défaut: 5
+  par défaut: 4
 
 numérique . équipements . ordinateur fixe:
   icônes: 🖥
@@ -160,7 +160,7 @@ numérique . équipements . ordinateur fixe . age:
   question: Quel âge a votre ordinateur fixe ?
   applicable si: ordinateur fixe . présent
   unité: an(s)
-  par défaut: 5
+  par défaut: 4
 numérique . équipements . ordinateur fixe . empreinte:
   formule: 296 + écran
 numérique . équipements . ordinateur fixe . écran: 

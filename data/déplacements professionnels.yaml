@@ -13,7 +13,7 @@ déplacements professionnels :
       - hotel
 
 déplacements professionnels . affirmatif:
-  question: Êtes-vous amené à effectuer des déplacements professionels (en dehors de ceux effectués avec votre véhicule individuel de fonction si vous en possédez un) ?
+  question: Êtes-vous amené à effectuer des déplacements professionnels (en dehors de ceux effectués avec votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
     Les déplacements professionnels effectués avec votre véhicule individuel de fonction ont déjà été pris en compte auparavant dans le questionnaire. Les déplacements domicile-travail ont également déjà été pris en compte.
   par défaut: oui
@@ -291,10 +291,10 @@ déplacements professionnels . hotel:
   unité: kgCO2e
 
 déplacements professionnels . hotel . nbre nuits:
-  question: En moyenne, combien de nuits passez-vous à l'hôtel chaque mois ?
+  question: En moyenne, combien de nuits passez-vous à l'hôtel par an ?
   suggestions: 
     zéro: 0
-    1 par mois: 1
-    10 par mois: 10
+    1 par mois: 12
+    10 par mois: 120
   unité: nuits/mois
   par défaut: 5

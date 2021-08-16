@@ -1,6 +1,6 @@
 
 alimentation: 
-  couleur: '#e58e26'
+  couleur: '#1b2769'
   icônes: 🍽
   description: | 
     Veuillez renseigner, ici, 5 repas représentatifs de votre consommation pendant une semaine de travail. 

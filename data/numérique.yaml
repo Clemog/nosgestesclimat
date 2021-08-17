@@ -56,7 +56,6 @@ numérique . internet . durée journalière:
 
 numérique . visioconférence:
   description: |
-    A completer
     Une visio-conférence sur mobile est en moyenne 3 fois plus impactante pour l’environnement quand on ajoute la vidéo à l’audio.
   formule: empreinte horaire * durée journalière * (profil . nbre semaines * 5)
   unité: kgCO2e
@@ -139,8 +138,14 @@ numérique . équipements . ordinateur portable . présent:
 numérique . équipements . ordinateur portable . age:
   question: Quel âge a votre ordinateur portable ?
   applicable si: ordinateur portable . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . ordinateur fixe:
   icônes: 🖥
@@ -159,8 +164,15 @@ numérique . équipements . ordinateur fixe . présent:
 numérique . équipements . ordinateur fixe . age:
   question: Quel âge a votre ordinateur fixe ?
   applicable si: ordinateur fixe . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
+    
 numérique . équipements . ordinateur fixe . empreinte:
   formule: 296 + écran
 numérique . équipements . ordinateur fixe . écran: 
@@ -181,8 +193,14 @@ numérique . équipements . écran supplémentaire . présent:
 numérique . équipements . écran supplémentaire . age:
   question: Quel âge a votre appareil photo ?
   applicable si: écran supplémentaire . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . téléphone:
   applicable si: présent
@@ -195,8 +213,14 @@ numérique . équipements . téléphone . présent:
 numérique . équipements . téléphone . age:
   question: Quel âge a votre téléphone ?
   applicable si: téléphone . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 2
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . tablette:
   icônes: ⬛
@@ -210,8 +234,14 @@ numérique . équipements . tablette . présent:
 numérique . équipements . tablette . age:
   question: Quel âge a votre tablette ?
   applicable si: tablette . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 5
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . appareil photo:
   applicable si: présent
@@ -224,8 +254,14 @@ numérique . équipements . appareil photo . présent:
 numérique . équipements . appareil photo . age:
   question: Quel âge a votre appareil photo ?
   applicable si: appareil photo . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . vidéoprojecteur:
   icônes: 📽️
@@ -238,5 +274,11 @@ numérique . équipements . vidéoprojecteur . présent:
 numérique . équipements . vidéoprojecteur . age:
   question: Quel âge a votre vidéoprojecteur ?
   applicable si: vidéoprojecteur . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 5
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4

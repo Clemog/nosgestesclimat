@@ -183,6 +183,8 @@ véhicule de fonction . deux-roues:
 
 véhicule de fonction . deux-roues . type:
   question: Quel type de deux-roues possédez-vous ? 
+  description: |
+    Le gabarit du véhicule influe sur sa consommation de carburant. En effet, plus un véhicule est grand et lourd, plus il consomme de litres de carburant au 100 km. L’impact carbone varie donc en fonction du gabarit du deux-roues.
   formule: 
     une possibilité: 
       choix obligatoire: oui

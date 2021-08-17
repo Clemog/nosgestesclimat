@@ -306,10 +306,12 @@ trajets domicile-travail . moyens de transport . tram . impact par heure:
 trajets domicile-travail . moyens de transport . tram . heures par trajet:
   applicable si: pourcent > 0 
   question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en métro ou tramway (aller simple) ?
+  description: |
+    Indiquez, ici, le nombre d’heures moyen que vous passez dans le métro ou tramway pour vous rendre sur votre lieu de travail.
   suggestions: 
     10 minutes / trajet: 0.17
     20 minutes / trajet: 0.33
-    30 minutes / jour: 0.5
+    30 minutes / trajet: 0.5
   unité: heures/trajet
   par défaut: 0.25
 

@@ -1,8 +1,10 @@
 déplacements professionnels :
   description: |
-    Sans surprise, le transport et avant tout le transport basé sur le pétrole constitue une part très importante de notre empreinte.
-    Ainsi, l'impact carbone de l'avion est dix fois plus élevé que celui du train. 
-    ![](https://cdn.shopify.com/s/files/1/0244/2929/7760/files/empreinte_carbone_avion_1024x1024.jpeg?v=1577380387)
+    Avec 31% des émissions françaises de gaz à effet de serre, le transport est la première source d’émissions, devant les bâtiments, l’agriculture et l’industrie tous trois ex æquo.
+    À elle seule, l’aviation est responsable de 2 % des émissions mondiales de gaz à effet de serre (GES).
+    Sur les plus longues distances, personne ne sera aujourd’hui étonné de voir que l’avion est beaucoup plus émetteur que le train pour un trajet donné. Oui, mais de combien ? L’impact de l’avion sur le climat est environ 200 fois supérieur si on compare par exemple TGV et avion, pour un trajet en France ou une destination européenne
+    Source : https://datagir.ademe.fr/blog/impact-carbone-mobilite-eco-deplacement/
+
   applicable si: affirmatif
   couleur: '#0984e3'
   icônes: ✈️

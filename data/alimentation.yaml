@@ -6,11 +6,12 @@ alimentation:
     Veuillez renseigner, ici, 5 repas représentatifs de votre consommation pendant une semaine de travail. 
     Ce que l'on mange, et dans une moindre mesure ce que l'on boit, influence largement notre empreinte climat. 
 
-    La premier facteur est la quantité de viande et de laitages : 
+    Le premier facteur est la quantité de viande et de laitages : 
       - la production d'un kilo de viande émet du CO2, mais aussi d'autres gaz (comme le méthane) qui réchauffent le climat bien plus rapidement
       - il faut nourrir les animaux avec des productions céréalières que l'on aurait pu manger nous-même, souvent issues de la déforestation.
 
     Contrairement à ce que l'on entend souvent, la distance parcourue par nos aliments et la quantité d'emballages plastique sont au second plan.
+    ![](https://geo.img.pmdstatic.net/pad/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgeo.2F2020.2F03.2F04.2F1efbe12b-334a-4230-90fd-d7dc32af5e53.2Epng/650x583/quality/80/1efbe12b-334a-4230-90fd-d7dc32af5e53-png.png)
   formule: 
     somme:
       - déjeuners

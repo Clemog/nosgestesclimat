@@ -2,9 +2,12 @@ trajets domicile-travail:
   couleur: '#ffa143'
   icônes: 🚦
   description: |
-    ![](https://www.mobilitytechgreen.com/wp-content/uploads/2017/08/bicyclecommute.jpg)
-    
-    Les déplacements pendulaires représentent une part importante du bilan carbone de votre entreprise.
+    Le secteur des transports est la première source d’émissions de gaz à effet de serre (GES) en France, avec près de 30 % des émissions totales. La route génère 95 % du CO2 des transports.
+    Réduire les émissions de gaz à effet de serre liées à la mobilité implique d’agir sur les 3 composantes du système :
+    ![](https://theshiftproject.org/wp-content/uploads/2020/01/Equation-CO2-mobilité-1024x128.png)
+    Si la voiture est aussi incontournable dans nos sociétés, c’est parce qu’il ne s’agit pas seulement d’un véhicule, mais bien d’un système complet composé des infrastructures, des services, d’une fiscalité et d’un imaginaire puissant, construit depuis des décennies par des campagnes publicitaires. L’alternative doit nécessairement s’appuyer sur un système aussi abouti, où les véhicules, les infrastructures, les services, la fiscalité, et l’imaginaire ont une cohérence d’ensemble.
+    Source : https://theshiftproject.org/article/guide-mobilite-quotidienne-bas-carbone/
+Réduire les émissions de gaz à effet de serre liées à la mobilité implique d’agir sur les 3 composantes du système :
   formule:  # Ici nous pourrions utiliser un "non applicable si: jours par semaine = 0" mais un bug fait que la question km deviendra booléenne Oui/Non. Voir https://github.com/betagouv/mon-entreprise/issues/1367
     variations:
     - si: jours par semaine = 0
@@ -112,7 +115,7 @@ trajets domicile-travail . moyens de transport . véhicule de fonction . km traj
   description: |
     A compléter
     
-  par défaut: 15
+  par défaut: 14
   unité: km/trajet
   suggestions:
     10km: 10
@@ -170,7 +173,7 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
     Le nombre de km que vous parcourez permet de calculer les émissions de carbone liées à l’utilisation du véhicule. 
 
   note: Mettre un lien vers l'étude et mettre à jour avec les statistiques de l'enquête déplacement 2020 si disponible.
-  par défaut: 15
+  par défaut: 14
   unité: km/trajet
   suggestions:
     10km: 10
@@ -191,7 +194,7 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
       - sinon: deux-roues . empreinte au kilomètre
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . type:
-  question: Quel est le type de véhicule que vous utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un)?
+  question: Quel est le type de véhicule utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
     Indiquez, ici, le type de motorisation que vous avez l’habitude d’utiliser. Si vous n’avez pas de véhicule, veuillez sélectionner le type de véhicule que vous utilisez principalement. 
     Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
@@ -303,10 +306,12 @@ trajets domicile-travail . moyens de transport . tram . impact par heure:
 trajets domicile-travail . moyens de transport . tram . heures par trajet:
   applicable si: pourcent > 0 
   question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en métro ou tramway (aller simple) ?
+  description: |
+    Indiquez, ici, le nombre d’heures moyen que vous passez dans le métro ou tramway pour vous rendre sur votre lieu de travail.
   suggestions: 
     10 minutes / trajet: 0.17
     20 minutes / trajet: 0.33
-    30 minutes / jour: 0.5
+    30 minutes / trajet: 0.5
   unité: heures/trajet
   par défaut: 0.25
 
@@ -344,7 +349,7 @@ trajets domicile-travail . moyens de transport . bus . impact par heure:
     A compléter
 
 trajets domicile-travail . moyens de transport . bus . heures par trajet:
-  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple)?
+  question: Combien de temps (en heures), en moyenne, dure votre trajet domicile-travail en bus (aller simple) ?
   suggestions: 
     10 minutes / trajet: 0.17
     20 minutes / trajet: 0.33

@@ -1,8 +1,8 @@
 numérique:
   description: |
-    Compte tenu du mix électrique mondial, la part d’émissions de gaz à effet de serre (GES) attribuable au numérique passerait ainsi de 2,5% en 2013 à 4% en 2020 (2,1 Gt) selon notre estimation. Le numérique devrait émettre en 2020 autant de CO2 que l’Inde en 2015, pour la totalité de son milliard trois cent millions d’habitants consommant essentiellement des énergies fossiles.
+    Compte tenu du mix électrique mondial, la part d’émissions de gaz à effet de serre (GES) attribuable au numérique passerait ainsi de 2,5% en 2013 à 4% en 2020 (2,1 Gt) selon notre estimation. Le numérique devrait émettre en 2020 autant de CO2 que l’Inde en 2015, pour la totalité de son milliard trois cents millions d’habitants consommant essentiellement des énergies fossiles.
     Plus préoccupant encore est le taux de croissance d’environ 8% des émissions de GES dues au Numérique. En effet, cette croissance doit s’analyser dorénavant au regard des objectifs de réduction des émissions de GES tels que définis lors de la COP 21. Or, alors que l’on peut espérer une baisse graduelle des émissions de GES totales à court terme (2020, par exemple), la part du Numérique dans ces émissions va continuer à augmenter et pourrait doubler d’ici 2025 pour atteindre 8%.
-    La phase de production des équipements occupe une part très significative, environ 45% en 2020, dans l’empreinte énergétique totale du Numérique, ainsi que dans les émissions de GES qui en découlent. Un utilisateur de smartphone (s’il garde son appareil deux ans) verra ainsi la consommation énergétique totale induite au cours du cycle de vie de cet équipement se réaliser à plus de 90% avant même son achat11. Ce poids de la phase de production dans l’impact énergétique est de l’ordre de 60% pour une télévision connectée mais est bien supérieur à 80% pour un ordinateur portable.
+    La phase de production des équipements occupe une part très significative, environ 45% en 2020, dans l’empreinte énergétique totale du Numérique, ainsi que dans les émissions de GES qui en découlent. Un utilisateur de smartphone (s’il garde son appareil deux ans) verra ainsi la consommation énergétique totale induite au cours du cycle de vie de cet équipement se réaliser à plus de 90% avant même son achat. Ce poids de la phase de production dans l’impact énergétique est de l’ordre de 60% pour une télévision connectée mais est bien supérieur à 80% pour un ordinateur portable.
     Une bonne partie des enjeux environnementaux du Numérique n’est donc pas liée à l’usage que l’on en fait, mais en grande partie au volume de matériel produit, à son processus de production, et à sa durée de vie.
   couleur: '#24d0ca'
   icônes: 📺
@@ -56,7 +56,6 @@ numérique . internet . durée journalière:
 
 numérique . visioconférence:
   description: |
-    A completer
     Une visio-conférence sur mobile est en moyenne 3 fois plus impactante pour l’environnement quand on ajoute la vidéo à l’audio.
   formule: empreinte horaire * durée journalière * (profil . nbre semaines * 5)
   unité: kgCO2e
@@ -139,8 +138,14 @@ numérique . équipements . ordinateur portable . présent:
 numérique . équipements . ordinateur portable . age:
   question: Quel âge a votre ordinateur portable ?
   applicable si: ordinateur portable . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
-  par défaut: 5
+  par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . ordinateur fixe:
   icônes: 🖥
@@ -159,8 +164,15 @@ numérique . équipements . ordinateur fixe . présent:
 numérique . équipements . ordinateur fixe . age:
   question: Quel âge a votre ordinateur fixe ?
   applicable si: ordinateur fixe . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
-  par défaut: 5
+  par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
+    
 numérique . équipements . ordinateur fixe . empreinte:
   formule: 296 + écran
 numérique . équipements . ordinateur fixe . écran: 
@@ -181,8 +193,14 @@ numérique . équipements . écran supplémentaire . présent:
 numérique . équipements . écran supplémentaire . age:
   question: Quel âge a votre appareil photo ?
   applicable si: écran supplémentaire . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . téléphone:
   applicable si: présent
@@ -195,8 +213,14 @@ numérique . équipements . téléphone . présent:
 numérique . équipements . téléphone . age:
   question: Quel âge a votre téléphone ?
   applicable si: téléphone . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 2
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . tablette:
   icônes: ⬛
@@ -210,8 +234,14 @@ numérique . équipements . tablette . présent:
 numérique . équipements . tablette . age:
   question: Quel âge a votre tablette ?
   applicable si: tablette . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 5
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . appareil photo:
   applicable si: présent
@@ -224,8 +254,14 @@ numérique . équipements . appareil photo . présent:
 numérique . équipements . appareil photo . age:
   question: Quel âge a votre appareil photo ?
   applicable si: appareil photo . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 4
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4
 
 numérique . équipements . vidéoprojecteur:
   icônes: 📽️
@@ -238,5 +274,11 @@ numérique . équipements . vidéoprojecteur . présent:
 numérique . équipements . vidéoprojecteur . age:
   question: Quel âge a votre vidéoprojecteur ?
   applicable si: vidéoprojecteur . présent
+  description: |
+    Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.
   unité: an(s)
   par défaut: 5
+  suggestions:
+    1 an: 1
+    3 ans: 3
+    4 ans: 4

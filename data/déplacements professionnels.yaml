@@ -1,8 +1,9 @@
 déplacements professionnels :
   description: |
-    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Correspondances_Pey_Berland_août_2016.jpg/640px-Correspondances_Pey_Berland_août_2016.jpg)
-    
-    Sans surprise, le transport et avant tout le transport basé sur le pétrole constitue une part très importante de notre empreinte.
+    Avec 31% des émissions françaises de gaz à effet de serre, le transport est la première source d’émissions, devant les bâtiments, l’agriculture et l’industrie tous trois ex æquo.
+    À elle seule, l’aviation est responsable de 2 % des émissions mondiales de gaz à effet de serre (GES).
+    Sur les plus longues distances, personne ne sera aujourd’hui étonné de voir que l’avion est beaucoup plus émetteur que le train pour un trajet donné. Oui, mais de combien ? L’impact de l’avion sur le climat est environ 200 fois supérieur si on compare par exemple TGV et avion, pour un trajet en France ou une destination européenne
+    Source : https://datagir.ademe.fr/blog/impact-carbone-mobilite-eco-deplacement/
 
   applicable si: affirmatif
   couleur: '#788bff'
@@ -13,7 +14,7 @@ déplacements professionnels :
       - hotel
 
 déplacements professionnels . affirmatif:
-  question: Êtes-vous amené à effectuer des déplacements professionels (en dehors de ceux effectués avec votre véhicule individuel de fonction si vous en possédez un) ?
+  question: Êtes-vous amené à effectuer des déplacements professionnels (en dehors de ceux effectués avec votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
     Les déplacements professionnels effectués avec votre véhicule individuel de fonction ont déjà été pris en compte auparavant dans le questionnaire. Les déplacements domicile-travail ont également déjà été pris en compte.
   par défaut: oui
@@ -72,6 +73,10 @@ déplacements professionnels . moyen . transports en commun . tram ou métro:
 
 déplacements professionnels . moyen . transports en commun . tram ou métro . heures:
   question: Combien de temps (en heures), passez-vous par semaine dans le métro ou le tramway dans le cadre de vos déplacements professionnels (hors déplacements domicile-travail) ?
+  description: |
+    Ces moyens de transports ont des impacts différents, c’est pourquoi nous vous demandons d’indiquer le nombre d’heures moyen que vous passez dans ces différents transports dans le cadre de vos déplacements professionnels. 
+
+
   par défaut: 10
   unité: heures
   période: semaine
@@ -256,6 +261,8 @@ déplacements professionnels . moyen . véhicule personnel ou location :
 
 déplacements professionnels . moyen . véhicule personnel ou location . km:
   question: En moyenne, quelle distance parcourez-vous chaque semaine avec cette voiture dans le cadre de vos déplacements professionnels (hors déplacement domicile-travail) ?
+  description: |
+    Indiquez, ici, le nombre de km que vous avez parcourus cette année avec ce véhicule. Le nombre de km que vous parcourez permet de calculer les émissions de carbone liées à l’utilisation du véhicule. 
   suggestions: 
     50km par semaine: 50
     400km par semaine: 400
@@ -276,6 +283,8 @@ déplacements professionnels . moyen . taxi:
 
 déplacements professionnels . moyen . taxi . heures:
   question: En moyenne, combien d'heures par semaine passez-vous dans le taxi pour vos déplacements professionnels ?
+  description: |
+    Indiquez, ici, le nombre d’heures que vous avez passé en taxi en moyenne par semaine pour effectuer vos déplacements professionnels. 
   suggestions: 
     1h par semaine: 1
     3h par semaine: 3
@@ -291,10 +300,10 @@ déplacements professionnels . hotel:
   unité: kgCO2e
 
 déplacements professionnels . hotel . nbre nuits:
-  question: En moyenne, combien de nuits passez-vous à l'hôtel chaque mois ?
+  question: En moyenne, combien de nuits passez-vous à l'hôtel par an ?
   suggestions: 
     zéro: 0
-    1 par mois: 1
-    10 par mois: 10
+    1 par mois: 12
+    10 par mois: 120
   unité: nuits/mois
   par défaut: 5

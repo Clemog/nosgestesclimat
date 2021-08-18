@@ -7,7 +7,6 @@ trajets domicile-travail:
     ![](https://theshiftproject.org/wp-content/uploads/2020/01/Equation-CO2-mobilité-1024x128.png)
     Si la voiture est aussi incontournable dans nos sociétés, c’est parce qu’il ne s’agit pas seulement d’un véhicule, mais bien d’un système complet composé des infrastructures, des services, d’une fiscalité et d’un imaginaire puissant, construit depuis des décennies par des campagnes publicitaires. L’alternative doit nécessairement s’appuyer sur un système aussi abouti, où les véhicules, les infrastructures, les services, la fiscalité, et l’imaginaire ont une cohérence d’ensemble.
     Source : https://theshiftproject.org/article/guide-mobilite-quotidienne-bas-carbone/
-Réduire les émissions de gaz à effet de serre liées à la mobilité implique d’agir sur les 3 composantes du système :
   formule:  # Ici nous pourrions utiliser un "non applicable si: jours par semaine = 0" mais un bug fait que la question km deviendra booléenne Oui/Non. Voir https://github.com/betagouv/mon-entreprise/issues/1367
     variations:
     - si: jours par semaine = 0

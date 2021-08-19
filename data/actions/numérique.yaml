@@ -16,12 +16,47 @@ numérique . internet . durée journalière . réduction:
   description: Nous proposons ici de réduire d'une heure le temps passé à regarder des vidéos en ligne.
   unité: heures
 
-numérique . internet . allonger durée de vie:
-  titre: Allonger la durée de vie
+numérique . allonger la durée de vie:
+  titre: Allonger la durée de vie des équipements informatiques
   effort: modéré
   type: collectif
   icônes: 💻📉
   description: |
-      Le streaming vidéo contribue aux émissions de GES (d'autant plus quand on utilise la connexion mobile) car il nécessite en réalité une multitude d'infrastructures. 
+    # Action
 
-      En limiter sa consommation, ici d'une heure par jour quand on y passe plus de 2h, et privilégier des alternatives comme la lecture permet de réduire son empreinte carbone numérique. 
+    L’utilisation du matériel bureautique est une chose, sa fabrication en est une autre, beaucoup plus impactante pour l’environnement. En effet, **la fabrication d’un ordinateur de 2 kg nécessite 800 kg de matières premières**, sans compter toute l’énergie consommée.
+
+    **Faire durer nos équipements est donc le geste le plus efficace pour diminuer leurs impacts. Passer de 2 à 4 ans d’usage pour une tablette ou un ordinateur améliore de 50 % son bilan environnemental.**
+
+    **Alors en cas de panne, essayez d’abord la réparation.** Si vous remplacez les équipements informatiques, pensez au marché du réemploi et du matériel reconditionné, et dans tous les cas au recyclage obligatoire des déchets d’équipements électriques et électroniques.
+
+    # Sources & Ressources
+
+    Pour en savoir plus : 
+
+    - [https://agirpourlatransition.ademe.fr/particuliers/bureau/numerique/materiel-informatique-place-a-sobriete](https://agirpourlatransition.ademe.fr/particuliers/bureau/numerique/materiel-informatique-place-a-sobriete)
+
+numérique . favoriser byod:
+  titre: Favoriser le « bring your own device »
+  effort: modéré
+  type: collectif
+  icônes: 💻📉
+  description: |
+    # Action
+
+    Le "Bring your own device" est une politique de gestion du matériel informatique. Elle vise à limiter l'achat d'appareils électroniques en encourageant les collaborateurs à utiliser leur matériel personnel pour leur activité professionnelle. Cette action permet de limiter les achats informatiques et donc l’impact principal du numérique : la fabrication des équipements.
+
+    Vous pouvez par exemple avoir deux cartes sim dans votre téléphone : une professionnelle et une personnelle afin de conserver la séparation entre vie personnelle et vie professionnelle.
+
+numérique . privilégier reconditionné:
+  titre: Privilégier l’achat de matériels reconditionnés
+  effort: modéré
+  type: collectif
+  icônes: 💻📉
+  description: |
+    # Action
+
+    Cette action permet de limiter l’impact principal du numérique : la fabrication des
+    équipements.
+
+    De plus, la mise en place de cette action permet de limiter les coûts liées aux achats d’équipements informatiques.

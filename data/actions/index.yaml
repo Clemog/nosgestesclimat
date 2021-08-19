@@ -1,14 +1,32 @@
 actions: 
   formule: 
     somme:
-      # - déplacements domicile-travail . arrêter l'avion
-      # - déplacements domicile-travail . arrêter l'avion court
+      # collectif
       - alimentation . réduire viande . par deux
       - alimentation . devenir végétarien
       - alimentation . viande faible empreinte
+      - alimentation . limiter la consommation de certains produits
+      - alimentation . mettre en place une AMAP
+      - alimentation . organiser des vegan days
+      - véhicule de fonction . prolonger durée de vie
+      - trajets domicile-travail . définir un plan de mobilité
+      - trajets domicile-travail . favoriser le télétravail
+      - trajets domicile-travail . installer des bornes
+      - trajets domicile-travail . mettre en place des parkings de vélo sécurisés
+      - trajets domicile-travail . mettre en place des douches
+      - déplacements professionnels . éco-conduite
+      - déplacements professionnels . limiter l'avion
+      - déplacements professionnels . rdv en visio
+      - déplacements professionnels . autopartage
+      - déplacements professionnels . remplacer véhicules thermiques
+      - numérique . internet . diminuer
+      - numérique . allonger la durée de vie
+      - numérique . favoriser byod
+      - numérique . privilégier reconditionné
+      # - déplacements domicile-travail . arrêter l'avion
+      # - déplacements domicile-travail . arrêter l'avion court
       # - déplacements domicile-travail . boulot . covoiturage
       # - déplacements domicile-travail . boulot . commun
       # - déplacements domicile-travail . boulot . télétravail
       # - déplacements domicile-travail . voiture 5km
-      - numérique . internet . diminuer
-      - numérique . internet . allonger durée de vie
+

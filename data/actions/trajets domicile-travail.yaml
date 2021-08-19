@@ -1,3 +1,99 @@
+trajets domicile-travail . définir un plan de mobilité:
+  titre: Définir un plan de mobilité
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Le Plan De Mobilité Employeur (PDME) est un ensemble de mesures qui vise à optimiser et à augmenter l’efficacité des déplacements liés à l’activité de l’entreprise, en particulier ceux de son personnel, pour diminuer les émissions de gaz à effet de serre et de polluants atmosphériques et réduire la congestion des infrastructures et des moyens de transports. 
+
+    Les plans de mobilité employeurs (PDM), obligatoires pour les employeurs regroupant 100 salariés ou plus sur un même site, et facultatifs pour les autres
+    employeurs, sont un instrument puissant de transition vers des modes alternatifs à la voiture individuelle pour les trajets domicile- travail. Cependant, très peu d’employeurs les mettent en place (faute de moyens humains et d’expertise, ou d’intérêt pour le sujet de la mobilité), ce qui est possible du fait de l’absence de contrôle de l’État.
+
+    **Les actions suivantes sont essentielles à la réussite d’un PDM :**
+
+    - Réaliser un diagnostic de la mobilité des salariés au départ, afin de leur proposer des solutions appropriées ;
+    - Réduire l’offre de stationnement sur le parking d’entreprise : réduction du nombre de places, assortie d’un avantage (possibilité de stationner, places plus proches)
+    pour les covoitureurs ;
+    - Mettre à disposition des équipements adaptés aux modes actifs et partagés : abris vélo, cheminements piétons sécurisés, douches etc. ;
+    - Organiser des actions d’animation et d’accompagnement personnalisé des salariés, régulièrement et dans la durée ;
+    - Établir des indicateurs de suivi pour chaque action engagée, de façon à en mesurer l’efficacité sur les pratiques de mobilité des salariés, et en tirer les conséquences.
+
+    # Sources & Ressources
+
+    Pour en savoir plus : 
+
+    - [https://www.ademe.fr/expertises/mobilite-transports/passer-a-laction/plan-mobilite-employeur](https://www.ademe.fr/expertises/mobilite-transports/passer-a-laction/plan-mobilite-employeur)
+    - [https://theshiftproject.org/wp-content/uploads/2021/01/201123_Shift_Mobilite_VF-003.pdf](https://theshiftproject.org/wp-content/uploads/2021/01/201123_Shift_Mobilite_VF-003.pdf)
+
+trajets domicile-travail . favoriser le télétravail:
+  titre: Favoriser le télétravail
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Le télétravail permet de réduire fortement l’impact des déplacements domicile-travail. Vous pouvez calculer ici, les émissions évitées en limitant vos déplacements domicile-travail : 
+
+    [https://teletravail.monimpacttransport.fr/?theme=simple](https://teletravail.monimpacttransport.fr/?theme=simple)
+
+    Cependant, il ne faut pas négliger les effets rebonds comme l’impact lié à l’utilisation de la visio-conférence ou encore le suréquipement informatique.
+
+    Quelques conseils pour réduire l'impact du télétravail : 
+
+    # Exemple
+
+    Dell est une entreprise américaine de fabrication d'ordinateurs créée en 1984 employant 157 000 personnes à travers le monde. Elle a lancé en 2013 un programme pour repenser le lieu de travail traditionnel : Connected workplace.
+
+    Il consiste à encourager « les collaborateurs à trouver de nouvelles façons de travailler » en se concentrant « sur l'obtention de résultats plutôt que sur l'endroit où le travail est effectué », selon le site internet de l'entreprise.
+
+    Ceux-ci ont donc la possibilité d'exercer jusqu'à 100 % de leur activité à distance. Dell met également en avant :
+
+    - Les économies financières réalisées.
+    - L'impact écologique positif.
+    - L'adhésion de 94 % des collaborateurs à cette nouvelle organisation du travail.
+
+    # Sources & Ressources
+
+    Pour en savoir plus : 
+
+    - [https://blog.hubspot.fr/marketing/entreprise-teletravail](https://blog.hubspot.fr/marketing/entreprise-teletravail)
+
+    # Installer des bornes de recharge pour vélos et voitures électriques
+
+trajets domicile-travail . installer des bornes:
+  titre: Installer des bornes de rechargement
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    L'un des enjeux des véhicules électrique est la recharge. Mettre à disposition un nombre important de bornes de recharges pour véhicules électriques permet donc d'encourager l'utilisation de ce type de véhicule. 
+
+trajets domicile-travail . mettre en place des parkings de vélo sécurisés:
+  titre: Mettre en place des parkings de vélo sécurisés
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Savoir que son vélo est en sécurité est important pour les cycliste. Cela permet donc d’encourager les déplacements en vélo.
+
+trajets domicile-travail . mettre en place des douches:
+  titre: Mettre en place des douches sur les sites
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Permettre aux collaborateurs de se doucher après avoir effectuer leur trajet en vélo permet d’encourager son utilisation même lorsqu’il fait chaud.
+
+
 # déplacements domicile-travail . arrêter l'avion: 
 #   icônes: 🛬🧳
 #   effort: conséquent

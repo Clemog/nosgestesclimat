@@ -72,6 +72,62 @@ alimentation . viande faible empreinte . par semaine . nouveau régime . compens
   formule: plats . viande 1 . empreinte * (plats . viande 2 . nombre)
   description: On compense la suppression des plat viande 2 en plat viande 1.
 
+alimentation . limiter la consommation de certains produits:
+  titre: Limiter la consommation de certains produits alimentaires particulièrement polluants comme le boeuf et l’avocat
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Certains produits sont plus polluants que d'autres. En première position nous retrouvons la viande de boeuf et les laitages. Cela est dû l'émission importante de Méthane par les boeufs. 
+
+    Pour réduire facilement votre empreinte carbone, limiter la consommation de produits alimentaires particulièrement polluants est très efficace. 
+
+    # Exemple
+
+    FoodChéri, producteur de repas à destination des entreprises a activement pris part au développement de la méthodologie de l'écoscore. Par ailleurs, elle a par exemple décidé d'exclure de ces recettes le boeuf (très émetteur en matière de GES), l'avocat (nécessite 1000 L d'eau pour 1kg) et le cabillaud (espèce menacée), tout en proposant une carte à 50% végétarienne.
+
+alimentation . mettre en place une AMAP:
+  titre: Mettre en place une AMAP à destination des collaborateurs
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Les AMAP présentent de nombreux avantages, tant pour le producteur que pour les consommateurs :
+
+    - apprécier les bénéfices environnementaux d'une nourriture qui n'a pas parcouru des centaines de kilomètres, avec moins d'emballages, issus d'une agriculture bénéfique pour la biodiversité, protégeant les sols et l'eau, moins polluante et moins énergivore ;
+    - rendre possible (ou favoriser) le retour des particularités alimentaires locales et régionales ;
+    - améliorer l'économie locale par une augmentation des emplois (en 2002 pour les 17 AMAP provençales, 12 postes sont passés de saisonnier à permanent afin de pouvoir fournir de produits en quantité et diversité suffisante pour toute l'année), plus de processus locaux, de consommation locale, et circulation de l'argent dans la communauté ;
+    - bénéficier de l'amélioration des liens sociaux, de la responsabilité sociale, du sens de la communauté et de la confiance.
+
+    # Sources & Ressources
+
+    Pour en savoir plus : 
+
+    - [https://www.economie.gouv.fr/ess/amap-cest-quoi](https://www.economie.gouv.fr/ess/amap-cest-quoi)
+
+alimentation . organiser des vegan days:
+  titre: Organiser des vegan days
+  effort: modéré
+  type: collectif
+  icônes: ❓
+  description: |
+    # Action
+
+    Les vegan days sont des jours où les repas consommées par les collaborateurs doivent être végétariens ou végétaliens. L'objectif est de faire découvrir une cuisine moins carnée. Offrir des repas végétariens à toute l’entreprise, par exemple, une fois par mois permet de faire découvrir les alternatives à la viande aux collaborateurs.
+
+    # Exemple
+
+    WeWork, le géant du coworking a annoncé début juillet qu’il ne servirait plus de viande rouge, de porc ou de volaille à ses employés (le poisson, en revanche, reste au menu). Celui ou celle qui voudrait s’offrir un burger lors d’un repas d’affaire ne sera plus remboursé(e) sur l’addition en question. « Eviter la consommation de viande est l’une des choses les plus importantes qu’un individu puisse faire pour réduire son impact sur l’environnement », justifie Miguel McKelvey, le cofondateur de WeWork.
+
+    Les arguments du patron de WeWork sont simples. « De nouvelles recherches indiquent qu’éviter la consommation de viande est l’une des choses les plus importantes qu’un individu puisse faire pour réduire son impact sur l’environnement », écrit-il dans sa note. Et d’ajouter : « D’ici 2023, le groupe pourrait ainsi sauver plus de 63 milliards de litres d’eau, plus de 202 millions de kilos de CO2 et 15 millions d’animaux. »
+
+    # Sources & Ressources
+
+    Pour en savoir plus : [https://usbeketrica.com/fr/article/wework-impose-6-000-salaries-un-regime-vegetarien](https://usbeketrica.com/fr/article/wework-impose-6-000-salaries-un-regime-vegetarien)
 
 alimentation . gaspillage alimentaire:
   inactive: oui
@@ -80,3 +136,4 @@ alimentation . gaspillage alimentaire:
   note: Dans le document en référence, page 7 pour l'empreinte du gaspillage et page 36 pour la réduction moyenne.
   références: 
     - https://www.ademe.fr/operation-foyers-temoins-estimer-impacts-gaspillage-alimentaire-menages
+

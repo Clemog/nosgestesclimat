@@ -1,7 +1,7 @@
 véhicule de fonction:
   description: |
     Les véhicules de fonction sont comptabilisés à part car ils sont directement liés aux activités de l'entreprise. Ainsi, l'usage des véhicules de fonction est comptabilisé dans le scope 2 tandis que la fabrication des véhicules est comptabilisée dans le scope 3. 
-  couleur: '#0c2461'
+  couleur: '#788BFF'
   icônes: 🚘
   applicable si: affirmatif   
   formule: 

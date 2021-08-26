@@ -2,7 +2,7 @@ déplacements professionnels . éco-conduite:
   titre: Dispenser des formations à l’éco-conduite
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🚗
   description: |
     # Action
 
@@ -41,7 +41,7 @@ déplacements professionnels . limiter l'avion:
   titre: Restreindre l'avion aux déplacements de plus de 4 heures en train
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: ✈️
   description: |
     # Action
 
@@ -57,7 +57,7 @@ déplacements professionnels . rdv en visio:
   titre: Privilégier les rendez-vous en visioconférence
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 💻
   description: |
     # Action
 
@@ -79,7 +79,7 @@ déplacements professionnels . autopartage:
   titre: Privilégier l’autopartage
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🚙
   description: |
     # Action
 
@@ -107,7 +107,7 @@ déplacements professionnels . remplacer véhicules thermiques:
   titre: Remplacer la flotte de véhicules thermiques par une flotte de véhicules électriques
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: ⚡️
   description: |
     # Action
 

@@ -76,7 +76,7 @@ alimentation . limiter la consommation de certains produits:
   titre: Limiter la consommation de certains produits alimentaires particulièrement polluants comme le boeuf et l’avocat
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🥩
   description: |
     # Action
 
@@ -92,7 +92,7 @@ alimentation . mettre en place une AMAP:
   titre: Mettre en place une AMAP à destination des collaborateurs
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🥕
   description: |
     # Action
 
@@ -113,7 +113,7 @@ alimentation . organiser des vegan days:
   titre: Organiser des vegan days
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🥗
   description: |
     # Action
 

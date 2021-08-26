@@ -2,7 +2,7 @@ numérique . internet . diminuer:
   titre: Réduire son temps de streaming
   effort: faible
   type: individuel
-  icônes: 💻📉
+  icônes: 🖥
   applicable si: internet . durée journalière >= 2
   formule: numérique . internet - empreinte réduite
   description: |
@@ -20,7 +20,7 @@ numérique . allonger la durée de vie:
   titre: Allonger la durée de vie des équipements informatiques
   effort: modéré
   type: collectif
-  icônes: 💻📉
+  icônes: 📈
   description: |
     # Action
 
@@ -40,7 +40,7 @@ numérique . favoriser byod:
   titre: Favoriser le « bring your own device »
   effort: modéré
   type: collectif
-  icônes: 💻📉
+  icônes: 💻
   description: |
     # Action
 
@@ -52,7 +52,7 @@ numérique . privilégier reconditionné:
   titre: Privilégier l’achat de matériels reconditionnés
   effort: modéré
   type: collectif
-  icônes: 💻📉
+  icônes: 🔄
   description: |
     # Action
 

@@ -2,7 +2,7 @@ trajets domicile-travail . définir un plan de mobilité:
   titre: Définir un plan de mobilité
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🚌
   description: |
     # Action
 
@@ -31,7 +31,7 @@ trajets domicile-travail . favoriser le télétravail:
   titre: Favoriser le télétravail
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🖥
   description: |
     # Action
 
@@ -67,7 +67,7 @@ trajets domicile-travail . installer des bornes:
   titre: Installer des bornes de rechargement
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🔋
   description: |
     # Action
 
@@ -77,7 +77,7 @@ trajets domicile-travail . mettre en place des parkings de vélo sécurisés:
   titre: Mettre en place des parkings de vélo sécurisés
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🔐
   description: |
     # Action
 
@@ -87,7 +87,7 @@ trajets domicile-travail . mettre en place des douches:
   titre: Mettre en place des douches sur les sites
   effort: modéré
   type: collectif
-  icônes: ❓
+  icônes: 🚿
   description: |
     # Action
 

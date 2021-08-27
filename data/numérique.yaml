@@ -191,7 +191,7 @@ numérique . équipements . écran supplémentaire . présent:
   question: Avez-vous un écran supplémentaire ?
   par défaut: non
 numérique . équipements . écran supplémentaire . age:
-  question: Quel âge a votre appareil photo ?
+  question: Quel âge a votre écran supplémentaire ?
   applicable si: écran supplémentaire . présent
   description: |
     Indiquez, ici, la durée de vie de l’équipement. La durée de vie des appareils permet d’amortir les émissions générées par la fabrication des équipements. Allonger la durée de vie des équipements est donc un levier important dans la réduction des émissions de gaz à effet de serre.

@@ -1,5 +1,5 @@
 trajets domicile-travail:
-  couleur: '#24D0CA'
+  couleur: '#59ccB7'
   icônes: 🚦
   description: |
     Le secteur des transports est la première source d’émissions de gaz à effet de serre (GES) en France, avec près de 30 % des émissions totales. La route génère 95 % du CO2 des transports.
@@ -243,6 +243,9 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
   note: FE 75 pour le thermique, 76 pour l'électrique, 77 pour l'hybride
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . deux-roues . type:
+  question: Quel type de deux-roues possédez-vous ? 
+  description: |
+    Le gabarit du véhicule influe sur sa consommation de carburant. En effet, plus un véhicule est grand et lourd, plus il consomme de litres de carburant au 100 km. L’impact carbone varie donc en fonction du gabarit du deux-roues.
   formule: 
     une possibilité: 
       choix obligatoire: oui

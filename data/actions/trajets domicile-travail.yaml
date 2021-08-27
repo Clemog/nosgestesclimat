@@ -61,8 +61,6 @@ trajets domicile-travail . favoriser le télétravail:
 
     - [https://blog.hubspot.fr/marketing/entreprise-teletravail](https://blog.hubspot.fr/marketing/entreprise-teletravail)
 
-    # Installer des bornes de recharge pour vélos et voitures électriques
-
 trajets domicile-travail . installer des bornes:
   titre: Installer des bornes de rechargement
   effort: modéré
@@ -71,7 +69,7 @@ trajets domicile-travail . installer des bornes:
   description: |
     # Action
 
-    L'un des enjeux des véhicules électrique est la recharge. Mettre à disposition un nombre important de bornes de recharges pour véhicules électriques permet donc d'encourager l'utilisation de ce type de véhicule. 
+    L'un des enjeux des véhicules électriques est la recharge. Mettre à disposition un nombre important de bornes de recharges pour véhicules électriques permet donc d'encourager l'utilisation de ce type de véhicule. 
 
 trajets domicile-travail . mettre en place des parkings de vélo sécurisés:
   titre: Mettre en place des parkings de vélo sécurisés
@@ -81,7 +79,7 @@ trajets domicile-travail . mettre en place des parkings de vélo sécurisés:
   description: |
     # Action
 
-    Savoir que son vélo est en sécurité est important pour les cycliste. Cela permet donc d’encourager les déplacements en vélo.
+    Savoir que son vélo est en sécurité est important pour les cyclistes. Cela permet donc d’encourager les déplacements en vélo.
 
 trajets domicile-travail . mettre en place des douches:
   titre: Mettre en place des douches sur les sites
@@ -91,7 +89,7 @@ trajets domicile-travail . mettre en place des douches:
   description: |
     # Action
 
-    Permettre aux collaborateurs de se doucher après avoir effectuer leur trajet en vélo permet d’encourager son utilisation même lorsqu’il fait chaud.
+    Permettre aux collaborateurs de se doucher après avoir effectué leur trajet en vélo permet d’encourager son utilisation même lorsqu’il fait chaud.
 
 
 # déplacements domicile-travail . arrêter l'avion: 

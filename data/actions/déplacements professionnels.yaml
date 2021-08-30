@@ -63,6 +63,8 @@ déplacements professionnels . rdv en visio:
 
     Cette action permet de fortement réduire les émissions de gaz à effet de serre liées aux déplacements. Il ne faut cependant pas négliger l’impact carbone de la visioconférence. 
 
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/visio.png)
+
     Nous vous conseillons lors de vos conférences en ligne de :
 
     - **Favorisez l’audio uniquement lors de vos réunions** : le flux vidéo (caméra) aura tendance à consommer beaucoup plus. Une séance sur mobile est en moyenne 2,6 fois plus impactante pour l’environnement en impact carbone quand on ajoute la vidéo à l’audio. Ajouter un partage d’écran n’est pas trop pénalisant s’il est utile.
@@ -102,16 +104,6 @@ déplacements professionnels . autopartage:
 
     - [https://www.ecologie.gouv.fr/autopartage-en-france](https://www.ecologie.gouv.fr/autopartage-en-france) ;
     - [https://citiz.coop](https://citiz.coop/)
-
-déplacements professionnels . remplacer véhicules thermiques:
-  titre: Remplacer la flotte de véhicules thermiques par une flotte de véhicules électriques
-  effort: modéré
-  type: collectif
-  icônes: ⚡️
-  description: |
-    # Action
-
-    Cette action est bénéfique en France où l’électricité est fortement décarbonée grâce au nucléaire. Même si l’impact de la fabrication d’une voiture électrique est bien plus important que celui d’une voiture thermique, l’impact de son usage est bien moins importante. Ce changement de motorisation permet donc de réduire les émissions de CO2 associées aux déplacements en voiture.
 
 # déplacements domicile-travail . arrêter l'avion: 
 #   icônes: 🛬🧳

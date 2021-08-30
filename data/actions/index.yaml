@@ -5,10 +5,12 @@ actions:
       - alimentation . réduire viande . par deux
       - alimentation . devenir végétarien
       - alimentation . viande faible empreinte
+      - alimentation . sensibiliser les collaborateurs sur l'impact de l'alimentation
       - alimentation . limiter la consommation de certains produits
       - alimentation . mettre en place une AMAP
       - alimentation . organiser des vegan days
       - véhicule de fonction . prolonger durée de vie
+      - véhicule de fonction . remplacer véhicules thermiques
       - trajets domicile-travail . définir un plan de mobilité
       - trajets domicile-travail . favoriser le télétravail
       - trajets domicile-travail . installer des bornes
@@ -18,7 +20,6 @@ actions:
       - déplacements professionnels . limiter l'avion
       - déplacements professionnels . rdv en visio
       - déplacements professionnels . autopartage
-      - déplacements professionnels . remplacer véhicules thermiques
       - numérique . internet . diminuer
       - numérique . allonger la durée de vie
       - numérique . favoriser byod

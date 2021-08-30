@@ -1,3 +1,93 @@
+trajets domicile-travail . commun:
+  titre: Aller au travail en transport en commun plutôt qu'en véhicule motorisé
+  effort: conséquent
+  icônes: 🚌🚃
+  type: individuel
+  description: |
+    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au travail réduit notre empreinte climat, mais améliore aussi notre qualité de vie.
+    [70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur) des déplacements domicile-travail sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme.
+    En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    > A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours. 
+  applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent > 0
+  ## pb avec "une de ces ces conditions", il faudrait ajouter la condition du véhicule de fonction également
+  formule: empreinte voiture - empreinte commun
+
+trajets domicile-travail . commun . empreinte voiture:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location
+      - trajets domicile-travail . moyens de transport . véhicule de fonction
+
+trajets domicile-travail . commun . empreinte commun:
+  formule: km * 0.14
+  note: FE 62
+  unité: kgCO2
+
+trajets domicile-travail . commun . km:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location . km
+      - trajets domicile-travail . moyens de transport . véhicule de fonction . km
+
+trajets domicile-travail . télétravail: 
+  titre: Faire du télétravail toute la semaine
+  effort: conséquent
+  icônes: 🏠💻
+  type: individuel
+  description: |  
+    Le télétravail permet d'éviter des déplacements journaliers pour se rendre au boulot.
+    Il n'est évidemment pas possible pour de nombreux salariés, mais la crise sanitaire de 2020 a montré que beaucoup de métiers sont effectivement télétravaillables.
+    Dans ce calcul, nous ne prenons en compte que les jours télétravaillés qui évitent un déplacement en voiture individuelle.
+  applicable si: compatible
+  non applicable si: trajets domicile-travail . jours par semaine < 5
+  formule: trajets domicile-travail
+
+trajets domicile-travail . télétravail . compatible:
+  question: Votre travail est-il totalement ou en partie compatible avec le télétravail ?
+  par défaut: oui
+
+trajets domicile-travail . télétravail partiel: 
+  titre: Faire du télétravail 2 jours par semaine
+  effort: modéré
+  icônes: 🏠💻
+  type: individuel
+  description: |  
+    Le télétravail permet d'éviter des déplacements journaliers pour se rendre au boulot.
+    Il n'est évidemment pas possible pour de nombreux salariés, mais la crise sanitaire de 2020 a montré que beaucoup de métiers sont effectivement télétravaillables.
+    Dans ce calcul, nous ne prenons en compte que les jours télétravaillés qui évitent un déplacement en voiture individuelle.
+  applicable si: compatible
+  non applicable si: trajets domicile-travail . jours par semaine < 5
+  formule: trajets domicile-travail * 2 / 5
+
+trajets domicile-travail . télétravail partiel . compatible:
+  question: Votre travail est-il totalement ou en partie compatible avec le télétravail ?
+  par défaut: oui
+
+trajets domicile-travail . éco-conduite: 
+  titre: Adopter une éco-conduite
+  effort: faible
+  type: individuel
+  icônes: 🚗☮
+  formule: trajet applicable * 15%
+  description: |
+    L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  
+    
+    Elle permet notamment d'économiser en moyenne 15 % de carburant, 
+    de réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant 
+    s’élever à plusieurs centaines d’euros. 
+    
+    L’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et 
+    le redémarrage sont fréquents. 
+    
+  références: 
+    Guide de formation à l'éco-conduite ADEME-LaPoste: https://www.ademe.fr/sites/default/files/assets/documents/66885_guide_ecoconduite.pdf#page=8
+
+trajets domicile-travail . éco-conduite . trajet applicable:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule de fonction
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location
+
 trajets domicile-travail . définir un plan de mobilité:
   titre: Définir un plan de mobilité
   effort: modéré

@@ -1,10 +1,19 @@
 actions: 
   formule: 
     somme:
-      # collectif
+      # individuel
       - alimentation . réduire viande . par deux
       - alimentation . devenir végétarien
       - alimentation . viande faible empreinte
+      - numérique . visioconférence . diminuer
+      - trajets domicile-travail . commun
+      - trajets domicile-travail . télétravail
+      - trajets domicile-travail . télétravail partiel
+      - trajets domicile-travail . éco-conduite
+      - déplacements professionnels . arrêter l'avion
+      - déplacements professionnels . arrêter l'avion court
+      
+      # collectif
       - alimentation . sensibiliser les collaborateurs sur l'impact de l'alimentation
       - alimentation . limiter la consommation de certains produits
       - alimentation . mettre en place une AMAP
@@ -20,10 +29,11 @@ actions:
       - déplacements professionnels . limiter l'avion
       - déplacements professionnels . rdv en visio
       - déplacements professionnels . autopartage
-      - numérique . internet . diminuer
       - numérique . allonger la durée de vie
       - numérique . favoriser byod
       - numérique . privilégier reconditionné
+
+
       # - déplacements domicile-travail . arrêter l'avion
       # - déplacements domicile-travail . arrêter l'avion court
       # - déplacements domicile-travail . boulot . covoiturage

@@ -1,3 +1,22 @@
+trajets domicile-travail . voiture 5km: 
+  titre: Se passer de voiture pour moins de 5 km
+  effort: modéré
+  icônes: 🚗🚲
+  type: individuel
+  formule: trajets domicile-travail . moyens de transport . véhicule personnel ou location
+  applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent > 0
+  non applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . km trajet > 5
+  ## pb avec "une de ces ces conditions", il faudrait ajouter la condition du véhicule de fonction également
+  description: |
+    En France, 4 trajets en voiture sur 10 font moins de 3 km et ce n’est pas moins de 177 millions de trajets de moins de 5km qui sont réalisés seuls 
+    en voiture chaque semaine (hors trajets domicile-travail). 
+    L’ensemble de ces trajets « courts » mis bout à bout présentent, à l’échelle de la France, près de 10% de la distance totale parcourue en voiture chaque année. 
+    Ainsi, se tourner vers les mobilités actives (vélo, trottinette...) pour ces trajets « courts » permet de réduire de manière significative, nos émissions de GES
+    tout en décongestionnant les voies urbaines et en améliorant la qualité de l’air de nos villes polluées.  
+  
+  # 4 trajets en voiture sur 10 font moins de 3 km +  10% de la distance totale parcourue = Transflash, N°398, Juin 2015, Cerema
+  # 177 millions de trajets de moins de 5km = consolidation depuis Enquête Nationale Transport et Déplacements (ENTD), MTES, 2008.
+
 trajets domicile-travail . commun:
   titre: Aller au travail en transport en commun plutôt qu'en véhicule motorisé
   effort: conséquent

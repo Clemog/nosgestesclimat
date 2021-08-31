@@ -152,12 +152,11 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: pourcent * impact usage
+    - sinon: pourcent / 100 * impact usage
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent:
   question: Part de la voiture dans la répartition des moyens de transport sur la semaine
   par défaut: 50
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . impact usage:
@@ -290,12 +289,11 @@ trajets domicile-travail . moyens de transport . tram:
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: pourcent * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
 
 trajets domicile-travail . moyens de transport . tram . pourcent:
   question: Part du tram dans la répartition des moyens de transport sur la semaine
   par défaut: 50
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . tram . impact par heure:
@@ -334,13 +332,12 @@ trajets domicile-travail . moyens de transport . bus:
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: pourcent * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
+    - sinon: pourcent / 100 * heures par jour * impact par heure * profil . nbre semaines * trajets domicile-travail . jours par semaine
 
 
 trajets domicile-travail . moyens de transport . bus . pourcent:
   question: Part du bus dans la répartition des moyens de transport sur la semaine
   par défaut: 0
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . bus . impact par heure:
@@ -376,13 +373,12 @@ trajets domicile-travail . moyens de transport . train:
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: pourcent * impact par semaine * profil . nbre semaines * trajets domicile-travail . jours par semaine
+    - sinon: pourcent / 100 * impact par semaine * profil . nbre semaines * trajets domicile-travail . jours par semaine
 
 
 trajets domicile-travail . moyens de transport . train . pourcent:
   question: Part du train dans la répartition des moyens de transport sur la semaine
   par défaut: 0
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . train . impact par semaine:

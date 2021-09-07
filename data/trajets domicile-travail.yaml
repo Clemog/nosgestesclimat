@@ -32,7 +32,7 @@ trajets domicile-travail . aller-retour:
   note: Augmentation de la part de transport Domicile-Travail de 20%, 60% ou 100% respectivement pour de temps en temps (1 fois sur 5), souvent (3 fois sur 5) et tous les jours. 
   description: |
     Faire des trajets supplémentaires engendre des émissions supplémentaires. 
-    Ces émissions doivent être prise en compte dans le calcul de l’impact de vos déplacements. 
+    Ces émissions doivent être prises en compte dans le calcul de l’impact de vos déplacements. 
   par défaut: "'jamais'"
   formule: 
     une possibilité: 

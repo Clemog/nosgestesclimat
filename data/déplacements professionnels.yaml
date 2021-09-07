@@ -116,6 +116,7 @@ déplacements professionnels . moyen . avion :
       - court courrier
       - moyen courrier
       - long courrier
+  unité: kgCO2
 
 déplacements professionnels . moyen . avion . court courrier:
   titre : Trajet en France métropolitaine
@@ -134,7 +135,7 @@ déplacements professionnels . moyen . avion . court courrier:
 
 déplacements professionnels . moyen . avion . court courrier . heures:
   question: Combien d'heures passez-vous en avion court courrier ?
-  par défaut: 10
+  par défaut: 5
   unité: heures
   période: année
   
@@ -155,7 +156,7 @@ déplacements professionnels . moyen . avion . moyen courrier:
 
 déplacements professionnels . moyen . avion . moyen courrier . heures:
   question: Combien d'heures passez-vous en avion moyen courrier ?
-  par défaut: 0
+  par défaut: 3
   unité: heures
   période: année
 

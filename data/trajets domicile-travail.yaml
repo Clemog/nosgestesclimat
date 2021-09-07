@@ -86,7 +86,7 @@ trajets domicile-travail . moyens de transport . neutre:
     La marche et le vélo (non électrique) font partie des mobilités douces, qui n’émettent pas de GES de manière directe.
     Les émissions liées à la fabrication (environ 100 kgCO2eq) n’ont pas été prises en compte, car trop faibles face aux autres émissions liées au transport.
   icônes: 🚲
-  formule: 0 * pourcent / 100
+  formule: 0 * pourcent
 
 trajets domicile-travail . moyens de transport . neutre . pourcent:
   question: Part de la marche ou vélo dans la répartition des moyens de transport sur la semaine
@@ -101,7 +101,7 @@ trajets domicile-travail . moyens de transport . véhicule de fonction:
   description: |
     J'utilise mon véhicule de fonction à hauteur de :
   icônes: 🚗
-  formule: 0 * pourcent / 100
+  formule: 0 * pourcent
 
 trajets domicile-travail . moyens de transport . véhicule de fonction . pourcent:
   question: Part du véhicule de fonction dans la répartition des moyens de transport sur la semaine
@@ -152,12 +152,11 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
     variations: 
     - si: pourcent = 0
       alors: 0
-    - sinon: (pourcent / 100) * impact usage
+    - sinon: pourcent / 100 * impact usage
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent:
   question: Part de la voiture dans la répartition des moyens de transport sur la semaine
   par défaut: 50
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . impact usage:
@@ -295,7 +294,6 @@ trajets domicile-travail . moyens de transport . tram:
 trajets domicile-travail . moyens de transport . tram . pourcent:
   question: Part du tram dans la répartition des moyens de transport sur la semaine
   par défaut: 50
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . tram . impact par heure:
@@ -340,7 +338,6 @@ trajets domicile-travail . moyens de transport . bus:
 trajets domicile-travail . moyens de transport . bus . pourcent:
   question: Part du bus dans la répartition des moyens de transport sur la semaine
   par défaut: 0
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . bus . impact par heure:
@@ -382,7 +379,6 @@ trajets domicile-travail . moyens de transport . train:
 trajets domicile-travail . moyens de transport . train . pourcent:
   question: Part du train dans la répartition des moyens de transport sur la semaine
   par défaut: 0
-  unité: %
   période: semaine
 
 trajets domicile-travail . moyens de transport . train . impact par semaine:

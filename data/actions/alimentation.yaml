@@ -3,7 +3,7 @@ alimentation . réduire viande:
 alimentation . réduire viande . par deux:
   applicable si: nombre de plats viande > 0
   titre: Manger deux fois moins de viande
-  formule: par semaine * 52
+  formule: par semaine * profil . nbre semaines
   icônes: 🍖📉
   description: |
     > ... ou le soir
@@ -31,7 +31,8 @@ alimentation . réduire viande . par deux . par semaine . nouveau régime . comp
 
 alimentation . devenir végétarien:
   applicable si: nombre de plats viande > 0
-  formule: par semaine * 52
+  formule: par semaine * profil . nbre semaines
+  type: individuel
   icônes: 🥗🧀
   description: |
     Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).
@@ -43,12 +44,13 @@ alimentation . devenir végétarien . par semaine:
   formule: plats - une semaine végétarienne
 
 alimentation . une semaine végétarienne:
-  formule: 14 * plats . végétarien . empreinte
+  formule: 5 * plats . végétarien . empreinte
 
 alimentation . viande faible empreinte:
   applicable si: plats . viande 2 . nombre > 0  
   titre: Privilégier la volaille ou le porc
-  formule: par semaine * 52
+  type: individuel
+  formule: par semaine * profil . nbre semaines
   icônes: 🥩🍗
   description: |
     L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue. 
@@ -72,6 +74,43 @@ alimentation . viande faible empreinte . par semaine . nouveau régime . compens
   formule: plats . viande 1 . empreinte * (plats . viande 2 . nombre)
   description: On compense la suppression des plat viande 2 en plat viande 1.
 
+alimentation . sensibiliser les collaborateurs sur l'impact de l'alimentation:
+  titre: Sensibiliser les collaborateurs sur l’impact de l’alimentation en particulier le boeuf
+  effort: modéré
+  type: collectif
+  icônes: 🥩
+  description: |
+    # Action
+
+    Afficher l'impact carbone des aliments et repas permet de sensibiliser les citoyens dans leurs choix de consommation. 
+
+    L'Eco-score est un indicateur représentant l'impact environnemental des produits alimentaires. Il classe les produits en 5 catégories (A, B, C, D, E), de l'impact le plus faible, à l'impact le plus élevé.
+
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/Eco-score.png)
+
+    L'impact environnemental tient compte de plusieurs facteurs sur la pollution de l'air, des eaux, des océans, du sol, ainsi que les impacts sur la biosphère. Toutes les étapes du cycle de vie des produits sont pris en compte. 
+
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/ACV.png)
+
+    Quelques pistes pour l'utiliser : 
+
+    - diffuser dans une newsletter un document sur l'impact de l'alimentation
+    - afficher l'écoscore dans le restaurant d'entreprise si vous en possédez un
+
+      ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/impact%20boeuf.png)
+
+    # Exemple
+
+    FoodChéri, producteur de repas à destination des entreprises a activement pris part au développement de la méthodologie de l'écoscore. Par ailleurs, elle a par exemple décidé d'exclure de ces recettes le boeuf (très émetteur en matière de GES), l'avocat (nécessite 1000 L d'eau pour 1kg) et le cabillaud (espèce menacée), tout en proposant une carte à 50% végétarienne. 
+
+    Lien vers la vidéo de FoodChéri : 
+
+    # Sources & Ressources
+
+    Pour en savoir plus : 
+
+    - [https://docs.score-environnemental.com](https://docs.score-environnemental.com/)
+
 alimentation . limiter la consommation de certains produits:
   titre: Limiter la consommation de certains produits alimentaires particulièrement polluants comme le boeuf et l’avocat
   effort: modéré
@@ -83,6 +122,8 @@ alimentation . limiter la consommation de certains produits:
     Certains produits sont plus polluants que d'autres. En première position nous retrouvons la viande de boeuf et les laitages. Cela est dû à l'émission importante de Méthane par les boeufs. 
 
     Pour réduire facilement votre empreinte carbone, limiter la consommation de produits alimentaires particulièrement polluants est très efficace. 
+
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/impact%20production.png)
 
     # Exemple
 
@@ -118,6 +159,8 @@ alimentation . organiser des vegan days:
     # Action
 
     Les vegan days sont des jours où les repas consommés par les collaborateurs doivent être végétariens ou végétaliens. L'objectif est de faire découvrir une cuisine moins carnée. Offrir des repas végétariens à toute l’entreprise, par exemple, une fois par mois permet de faire découvrir les alternatives à la viande aux collaborateurs.
+
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/vegan%20days.png)
 
     # Exemple
 

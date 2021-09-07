@@ -1,3 +1,47 @@
+déplacements professionnels . arrêter l'avion: 
+  icônes: 🛬🧳
+  effort: conséquent
+  type: individuel
+  formule: déplacements professionnels . moyen . avion
+  description: |
+    L'avion a une empreinte importante sur le climat. 
+    Elle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. 
+    L'empreinte totale de l'avion est estimée à environ 2x celle du CO₂. 
+    Voir le [calculateur transport](https://monimpacttransport.fr) pour visualiser cette empreinte et la comparer aux autres moyens de transport.
+  aller plus loin: |
+    ## Forçage radiatif total
+   
+    L'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).
+    Du fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).
+    
+    Ce graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).
+    ![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)
+    ## Avion vs voiture
+    On entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. 
+    Premièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture, ne rend pas ce premier vertueux.
+    Deuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.
+
+déplacements professionnels . arrêter l'avion court: 
+  titre: Privilégier le train au lieu de l'avion
+  effort: modéré
+  type: individuel
+  icônes: 🛬🚆
+  formule: déplacements professionnels . moyen . avion . court courrier - remplacement train
+  # Mettre histogramme GES qui compare les trajets train vs avion.
+  description: |
+    L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. 
+    En effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO2 émise par km parcouru) d’un avion et d’un train. 
+    > À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. 
+    C’est pourquoi adapter nos week-ends et nos vacances 
+    en nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à 
+    l’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat
+    [Comparez les modes de transport ici](https://monimpacttransport.fr) 
+  note: On considère que le train est 3 fois plus lent que l'avion
+
+déplacements professionnels . arrêter l'avion court . remplacement train:
+  formule: déplacements professionnels . moyen . avion . court courrier . heures * 3 * 0.35
+  note: FE 68
+
 déplacements professionnels . éco-conduite:
   titre: Dispenser des formations à l’éco-conduite
   effort: modéré
@@ -63,6 +107,8 @@ déplacements professionnels . rdv en visio:
 
     Cette action permet de fortement réduire les émissions de gaz à effet de serre liées aux déplacements. Il ne faut cependant pas négliger l’impact carbone de la visioconférence. 
 
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/visio.png)
+
     Nous vous conseillons lors de vos conférences en ligne de :
 
     - **Favorisez l’audio uniquement lors de vos réunions** : le flux vidéo (caméra) aura tendance à consommer beaucoup plus. Une séance sur mobile est en moyenne 2,6 fois plus impactante pour l’environnement en impact carbone quand on ajoute la vidéo à l’audio. Ajouter un partage d’écran n’est pas trop pénalisant s’il est utile.
@@ -102,16 +148,6 @@ déplacements professionnels . autopartage:
 
     - [https://www.ecologie.gouv.fr/autopartage-en-france](https://www.ecologie.gouv.fr/autopartage-en-france) ;
     - [https://citiz.coop](https://citiz.coop/)
-
-déplacements professionnels . remplacer véhicules thermiques:
-  titre: Remplacer la flotte de véhicules thermiques par une flotte de véhicules électriques
-  effort: modéré
-  type: collectif
-  icônes: ⚡️
-  description: |
-    # Action
-
-    Cette action est bénéfique en France où l’électricité est fortement décarbonée grâce au nucléaire. Même si l’impact de la fabrication d’une voiture électrique est bien plus important que celui d’une voiture thermique, l’impact de son usage est bien moins importante. Ce changement de motorisation permet donc de réduire les émissions de CO2 associées aux déplacements en voiture.
 
 # déplacements domicile-travail . arrêter l'avion: 
 #   icônes: 🛬🧳

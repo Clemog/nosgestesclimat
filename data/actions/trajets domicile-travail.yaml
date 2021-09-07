@@ -1,3 +1,112 @@
+trajets domicile-travail . voiture 5km: 
+  titre: Se passer de voiture pour moins de 5 km
+  effort: modéré
+  icônes: 🚗🚲
+  type: individuel
+  formule: trajets domicile-travail . moyens de transport . véhicule personnel ou location
+  applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent > 0
+  non applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . km trajet > 5
+  ## pb avec "une de ces ces conditions", il faudrait ajouter la condition du véhicule de fonction également
+  description: |
+    En France, 4 trajets en voiture sur 10 font moins de 3 km et ce n’est pas moins de 177 millions de trajets de moins de 5km qui sont réalisés seuls 
+    en voiture chaque semaine (hors trajets domicile-travail). 
+    L’ensemble de ces trajets « courts » mis bout à bout présentent, à l’échelle de la France, près de 10% de la distance totale parcourue en voiture chaque année. 
+    Ainsi, se tourner vers les mobilités actives (vélo, trottinette...) pour ces trajets « courts » permet de réduire de manière significative, nos émissions de GES
+    tout en décongestionnant les voies urbaines et en améliorant la qualité de l’air de nos villes polluées.  
+  
+  # 4 trajets en voiture sur 10 font moins de 3 km +  10% de la distance totale parcourue = Transflash, N°398, Juin 2015, Cerema
+  # 177 millions de trajets de moins de 5km = consolidation depuis Enquête Nationale Transport et Déplacements (ENTD), MTES, 2008.
+
+trajets domicile-travail . commun:
+  titre: Aller au travail en transport en commun plutôt qu'en véhicule motorisé
+  effort: conséquent
+  icônes: 🚌🚃
+  type: individuel
+  description: |
+    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au travail réduit notre empreinte climat, mais améliore aussi notre qualité de vie.
+    [70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur) des déplacements domicile-travail sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme.
+    En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    > A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours. 
+  applicable si: trajets domicile-travail . moyens de transport . véhicule personnel ou location . pourcent > 0
+  ## pb avec "une de ces ces conditions", il faudrait ajouter la condition du véhicule de fonction également
+  formule: empreinte voiture - empreinte commun
+
+trajets domicile-travail . commun . empreinte voiture:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location
+      - trajets domicile-travail . moyens de transport . véhicule de fonction
+
+trajets domicile-travail . commun . empreinte commun:
+  formule: km * 0.14
+  note: FE 62
+  unité: kgCO2
+
+trajets domicile-travail . commun . km:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location . km
+      - trajets domicile-travail . moyens de transport . véhicule de fonction . km
+
+trajets domicile-travail . télétravail: 
+  titre: Faire du télétravail toute la semaine
+  effort: conséquent
+  icônes: 🏠💻
+  type: individuel
+  description: |  
+    Le télétravail permet d'éviter des déplacements journaliers pour se rendre au boulot.
+    Il n'est évidemment pas possible pour de nombreux salariés, mais la crise sanitaire de 2020 a montré que beaucoup de métiers sont effectivement télétravaillables.
+    Dans ce calcul, nous ne prenons en compte que les jours télétravaillés qui évitent un déplacement en voiture individuelle.
+  applicable si: compatible
+  non applicable si: trajets domicile-travail . jours par semaine < 5
+  formule: trajets domicile-travail
+
+trajets domicile-travail . télétravail . compatible:
+  question: Votre travail est-il totalement ou en partie compatible avec le télétravail ?
+  par défaut: oui
+
+trajets domicile-travail . télétravail partiel: 
+  titre: Faire du télétravail 2 jours par semaine
+  effort: modéré
+  icônes: 🏠💻
+  type: individuel
+  description: |  
+    Le télétravail permet d'éviter des déplacements journaliers pour se rendre au boulot.
+    Il n'est évidemment pas possible pour de nombreux salariés, mais la crise sanitaire de 2020 a montré que beaucoup de métiers sont effectivement télétravaillables.
+    Dans ce calcul, nous ne prenons en compte que les jours télétravaillés qui évitent un déplacement en voiture individuelle.
+  applicable si: compatible
+  non applicable si: trajets domicile-travail . jours par semaine < 5
+  formule: trajets domicile-travail * 2 / 5
+
+trajets domicile-travail . télétravail partiel . compatible:
+  question: Votre travail est-il totalement ou en partie compatible avec le télétravail ?
+  par défaut: oui
+
+trajets domicile-travail . éco-conduite: 
+  titre: Adopter une éco-conduite
+  effort: faible
+  type: individuel
+  icônes: 🚗☮
+  formule: trajet applicable * 15%
+  description: |
+    L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  
+    
+    Elle permet notamment d'économiser en moyenne 15 % de carburant, 
+    de réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant 
+    s’élever à plusieurs centaines d’euros. 
+    
+    L’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et 
+    le redémarrage sont fréquents. 
+    
+  références: 
+    Guide de formation à l'éco-conduite ADEME-LaPoste: https://www.ademe.fr/sites/default/files/assets/documents/66885_guide_ecoconduite.pdf#page=8
+
+trajets domicile-travail . éco-conduite . trajet applicable:
+  formule:
+    somme:
+      - trajets domicile-travail . moyens de transport . véhicule de fonction
+      - trajets domicile-travail . moyens de transport . véhicule personnel ou location
+
 trajets domicile-travail . définir un plan de mobilité:
   titre: Définir un plan de mobilité
   effort: modéré
@@ -43,6 +152,8 @@ trajets domicile-travail . favoriser le télétravail:
 
     Quelques conseils pour réduire l'impact du télétravail : 
 
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/t%C3%A9l%C3%A9travail.png)
+
     # Exemple
 
     Dell est une entreprise américaine de fabrication d'ordinateurs créée en 1984 employant 157 000 personnes à travers le monde. Elle a lancé en 2013 un programme pour repenser le lieu de travail traditionnel : Connected workplace.
@@ -70,6 +181,8 @@ trajets domicile-travail . installer des bornes:
     # Action
 
     L'un des enjeux des véhicules électriques est la recharge. Mettre à disposition un nombre important de bornes de recharges pour véhicules électriques permet donc d'encourager l'utilisation de ce type de véhicule. 
+
+    ![](https://storage.gra.cloud.ovh.net/v1/AUTH_a348a2324a5740a39507c0e3bd39e186/assets/ngc/voiture%20%C3%A9lec.png)
 
 trajets domicile-travail . mettre en place des parkings de vélo sécurisés:
   titre: Mettre en place des parkings de vélo sécurisés

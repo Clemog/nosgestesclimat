@@ -1,8 +1,7 @@
-
-alimentation: 
+alimentation:
   couleur: '#92C8A2'
   icônes: 🍽
-  description: | 
+  description: |
     Veuillez renseigner, ici, 5 repas représentatifs de votre consommation pendant une semaine de travail. 
     Ce que l'on mange, et dans une moindre mesure ce que l'on boit, influence largement notre empreinte climat. 
 
@@ -12,11 +11,11 @@ alimentation:
 
     Contrairement à ce que l'on entend souvent, la distance parcourue par nos aliments et la quantité d'emballages plastique sont au second plan.
     ![](https://geo.img.pmdstatic.net/pad/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgeo.2F2020.2F03.2F04.2F1efbe12b-334a-4230-90fd-d7dc32af5e53.2Epng/650x583/quality/80/1efbe12b-334a-4230-90fd-d7dc32af5e53-png.png)
-  formule: 
+  formule:
     somme:
       - déjeuners
 
-alimentation . déjeuners :
+alimentation . déjeuners:
   icônes: 🍽️
   formule: par semaine * profil . nbre semaines
 alimentation . déjeuners . par semaine:
@@ -25,22 +24,20 @@ alimentation . déjeuners . par semaine:
 alimentation . plats:
   titre: Empreinte de 5 repas
   description: |
-      Indiquez, ici, 5 repas représentatifs de votre consommation pendant une semaine de travail. 
-      
-  formule: 
+    Indiquez, ici, 5 repas représentatifs de votre consommation pendant une semaine de travail.
+
+  formule:
     somme:
       - végétarien
       - viande 1
       - viande 2
   note: |
-      
-      Nous limitons le choix pour l'instant à 4 régimes. Ils sont basés sur les régimes représentatifs [documentés par l'ADEME](https://www.bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?repas.htm).
-      
-      Les repas viande ne sont déclinés qu'avec une quantité "classique" de viande.
-     
 
+    Nous limitons le choix pour l'instant à 4 régimes. Ils sont basés sur les régimes représentatifs [documentés par l'ADEME](https://www.bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?repas.htm).
 
-références: 
+    Les repas viande ne sont déclinés qu'avec une quantité "classique" de viande.
+
+références:
   - https://www.bilans-ges.ademe.fr/fr/actualite/actualite/detail/id/23
 
 alimentation . plats . végétarien:
@@ -58,7 +55,7 @@ alimentation . plats . végétarien . nombre:
   question: Nombre de plats végétariens par semaine
   par défaut: 1
   période: semaine
-  
+
 alimentation . plats . viande 1:
   titre: Viande 1
   icônes: 🍗🥓🧀
@@ -81,7 +78,7 @@ alimentation . plats . viande 2:
   titre: viande 2
   icônes: 🥩🍖
   description: |
-    Repas contenant une pièce de boeuf. 
+    Repas contenant une pièce de boeuf.
 
   formule: empreinte * nombre
 
@@ -95,19 +92,18 @@ alimentation . plats . viande 2 . nombre:
   par défaut: 1
   période: semaine
 
-alimentation . nombre de plats viande: 
+alimentation . nombre de plats viande:
   formule: plats . viande 1 . nombre + plats . viande 2 . nombre
 
-alimentation . nombre de plats : 
+alimentation . nombre de plats:
   formule: plats . végétarien . nombre + plats . viande 1 . nombre + plats . viande 2 . nombre
+# alimentation . plats . notif végé:
+#   type: notification
+#   formule: nombre de plats != 5
+#   description: |
+#     Ceci est un exemple à compléter.
 
-alimentation . plats . notif végé:
-  type: notification
-  formule: nombre de plats != 5
-  description: | 
-    Ceci est un exemple à compléter.
-
-# alimentation . planétaire: 
+# alimentation . planétaire:
 #   icônes: 🥗
 #   description: |
 #     Un régime décrit en 2019 pour concilier santé et environnement.

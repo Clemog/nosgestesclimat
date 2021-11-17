@@ -306,5 +306,5 @@ déplacements professionnels . hotel . nbre nuits:
     zéro: 0
     1 par mois: 12
     10 par mois: 120
-  unité: nuits/mois
+  unité: nuits/an
   par défaut: 5

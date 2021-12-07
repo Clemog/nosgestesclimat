@@ -192,7 +192,7 @@ trajets domicile-travail . moyens de transport . véhicule personnel ou location
       - sinon: deux-roues . empreinte au kilomètre
 
 trajets domicile-travail . moyens de transport . véhicule personnel ou location . type:
-  question: Quel est le type de véhicule utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un) ?
+  question: Quel type de véhicule utilisez-vous pour vous rendre sur votre lieu de travail (hors votre véhicule individuel de fonction si vous en possédez un) ?
   description: |
     Indiquez, ici, le type de motorisation que vous avez l’habitude d’utiliser. Si vous n’avez pas de véhicule, veuillez sélectionner le type de véhicule que vous utilisez principalement. 
     Le type de véhicule et de motorisation influe directement le facteur d’émission permettant de calculer l’impact carbone lié à l’utilisation de ces véhicules. 
